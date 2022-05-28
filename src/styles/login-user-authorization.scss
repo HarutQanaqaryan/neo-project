@@ -1,0 +1,35 @@
+@import  "./vars/variables.scss";
+
+.login-user-page {
+  display: flex;
+  height: 100%;
+}
+.login-user-authorization_block {
+  display: flex;
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  padding: 70px 130px 100px 130px;
+  img {
+    margin-bottom: 50px;
+  }
+}
+
+.login-user-authorization_form {
+  width: 50vh;
+}
+.login-user_request-register {
+  font-family: $baseFont;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #2d3436;
+  margin-top: 16px;
+}
+.login-user_request-register_link {
+  text-decoration: none;
+  color: blue;
+}

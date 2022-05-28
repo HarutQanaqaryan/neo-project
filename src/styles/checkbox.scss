@@ -1,0 +1,15 @@
+@import  "./vars/variables.scss";
+
+.checkbox-block {
+  margin: 28px 0px 28px 0px;
+  display: flex;
+}
+.checkbox-label {
+  font-family: $baseFont;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #2d3436;
+  margin-left: 11px;
+}
