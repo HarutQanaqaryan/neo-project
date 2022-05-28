@@ -1,7 +1,5 @@
 @import  "./vars/variables.scss";
-.text-field {
-  margin-bottom: 32px;
-}
+
 .text-field_label {
   font-family: $baseFont;
   font-style: normal;
@@ -14,7 +12,6 @@
 .text-field_input {
   height: 48px;
   background: #f0f0f0;
-  mix-blend-mode: normal;
   border-radius: $baseBorderRadius;
   width: 100%;
   display: flex;
@@ -34,4 +31,10 @@
     line-height: 22px;
     color: #2d3436;
   }
+}
+.login-authorization_input {
+  margin-bottom: 35px;
+}
+.header-search_input {
+  width: 40%;
 }

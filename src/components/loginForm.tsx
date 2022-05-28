@@ -13,11 +13,13 @@ export const LoginForm = () => {
         placeholder="Type your e-mail"
         label="E-MAIL"
         icon={emailIcon}
+        uniqueStyle="login-authorization_input"
       />
       <TextField
         placeholder="Type your password"
         label="PASSWORD"
         icon={lockIcon}
+        uniqueStyle="login-authorization_input"
       />
       <CheckBox label="Keep me logged in" checked={false} />
       <Button text="Login" className="login-user_btn" />
