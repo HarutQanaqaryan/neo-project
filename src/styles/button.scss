@@ -1,6 +1,8 @@
-@import  "./vars/variables.scss";
+@import "./vars/variables.scss";
 
-.login-user_btn {
+.login-user_btn,
+.your-claims-head_btn,
+.claim-status_btn {
   background: #7db59a;
   width: 100%;
   height: 52px;
@@ -14,7 +16,8 @@
   font-size: 18px;
   line-height: 36px;
   letter-spacing: 0.25px;
-
+  display: flex;
+  align-items: center;
   &:hover {
     background: #5b9479;
   }
@@ -22,3 +25,7 @@
     background: #4f896c;
   }
 }
+.your-claims-head_btn {
+  width: 200px;
+}
+

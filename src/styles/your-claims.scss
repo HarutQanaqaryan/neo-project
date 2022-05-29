@@ -1,0 +1,30 @@
+@import "./vars/variables.scss";
+.your-claims_block {
+  display: inline-flex;
+  height: 100vh;
+}
+.your-claims-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.your-claims-head_title {
+  font-family: $baseFont;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+  color: #000000;
+  margin: 0%;
+}
+
+.your-claims-table-block {
+  margin: 0%;
+  padding: 50px 40px 40px 40px;
+  width: 94vw;
+}
+
+.your-claims {
+    width: 94vh;
+}

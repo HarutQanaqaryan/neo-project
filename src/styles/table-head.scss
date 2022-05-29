@@ -1,0 +1,22 @@
+@import "./vars/variables.scss";
+
+.table-head {
+  background: #f1f1f1;
+  border-radius: 0px;
+  height: 56px;
+  text-align: left;
+}
+.table-head-row {
+  th {
+    font-family: $baseFont;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #2d3436;
+    padding-left: 10px;
+    img {
+      margin-left: 15px;
+    }
+  }
+}

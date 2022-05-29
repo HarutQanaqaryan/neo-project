@@ -1,0 +1,55 @@
+@import "./vars/variables.scss";
+
+.table-body {
+  tr {
+    border-radius: 0px;
+    height: 56px;
+    text-align: left;
+    border-bottom: 1px solid #c2c2c2;
+    &:hover {
+      background: #f1f1f1;
+    }
+  }
+  .claim-cell {
+    padding-left: 10px;
+    font-family: $baseFont;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #2d3436;
+  }
+}
+.claim-type {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  margin-right: 16px;
+  border-radius: 50%;
+  margin-top: 2px;
+}
+.claim-actions {
+  font-family: $baseFont;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-decoration-line: underline;
+  color: #148bff;
+}
+.claim-status {
+  width: 124px;
+  height: 32px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 2.5px;
+  color: #ffffff;
+  padding: 8px 16px 8px 16px;
+  border-radius: $baseBorderRadius;
+  text-align: center;
+}
