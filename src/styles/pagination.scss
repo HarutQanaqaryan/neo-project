@@ -22,8 +22,12 @@
     border: 1px solid #7db59a;
   }
 }
+.pagination-ellipsis {
+  padding-left: 10px;
+}
 .current {
   border: 1px solid #7db59a;
+  color:  #7db59a;
 }
 
 .pagination-prev-next_disabled {

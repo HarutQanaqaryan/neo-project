@@ -1,12 +1,9 @@
 export const checkClaimStatusColor = (status: string) => {
   switch (status) {
-    case "Declined": {
-      return "#E84393";
-    }
     case "New": {
       return "#6C5CE7";
     }
-    case "In progress": {
+    case "In Progress": {
       return "#FDCB6E";
     }
     case "Done": {

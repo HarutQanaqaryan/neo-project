@@ -1,9 +1,9 @@
-import { SlowBuffer } from "buffer";
 import { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { paginationsNumberCells } from "../helpers/paginetionNumbers";
 import "../styles/pagination.scss";
 import { PaginationNavLink } from "./paginationLink";
+import elipsis from "../assets/icons/pagination-elipsis.svg";
 
 interface PageType {
   claimPerPage: number;
@@ -21,6 +21,8 @@ export const Pagination = (prop: PageType) => {
   const [isFistElem, setIsFirstElem] = useState(true);
   const [isLastElem, setIsLastElem] = useState(false);
   const url = useLocation();
+  let beforePages = prop.currentPage - 2;
+  let afterPages = prop.currentPage + 2;
 
   useEffect(() => {
     sessionStorage.setItem("Current Page", String(prop.currentPage));
@@ -39,6 +41,17 @@ export const Pagination = (prop: PageType) => {
     );
   }, [prop.currentPage, pageNums.length]);
 
+  const renderPaginate = (num: number, current: boolean) => {
+    return (
+      <PaginationNavLink
+        url={url.pathname}
+        current={current}
+        num={num}
+        paginate={prop.paginate}
+        key={Math.random()}
+      />
+    );
+  };
   return (
     <div className="your-claims-pagination">
       <NavLink
@@ -50,15 +63,32 @@ export const Pagination = (prop: PageType) => {
       >
         {"<"}
       </NavLink>
-      {pageNums.map((el: any) => (
-        <PaginationNavLink
-          url={url.pathname}
-          current={el.current}
-          num={el.num}
-          paginate={prop.paginate}
-          key={Math.random()}
-        />
-      ))}
+      <>
+        {renderPaginate(pageNums[0].num, pageNums[0].current)}
+        {prop.currentPage > 3 && (
+          <img src={elipsis} alt="Ellipsis" className="pagination-ellipsis" />
+        )}
+        {pageNums.map((el) => {
+          if (el.num === 1) {
+            return false;
+          }
+          if (el.num === pageNums.length) {
+            return false;
+          }
+          if (el.num >= beforePages && el.num <= prop.currentPage)
+            return renderPaginate(el.num, el.current);
+          if (el.num <= afterPages && el.num >= prop.currentPage)
+            return renderPaginate(el.num, el.current);
+          return true;
+        })}
+        {prop.currentPage < pageNums.length - 2 && (
+          <img src={elipsis} alt="Ellipsis" className="pagination-ellipsis" />
+        )}
+        {renderPaginate(
+          pageNums[pageNums.length - 1].num,
+          pageNums[pageNums.length - 1].current
+        )}
+      </>
       <NavLink
         to={`${url.pathname}`}
         className={`pagination-item ${

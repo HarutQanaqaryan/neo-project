@@ -1,8 +1,5 @@
 export const checkClaimTypeColor = (type: string) => {
   switch (type) {
-    case "Hardwere": {
-      return { background: "#7DB59A" };
-    }
     case "Software": {
       return { background: "#FF7675" };
     }
