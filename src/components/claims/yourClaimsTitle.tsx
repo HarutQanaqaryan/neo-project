@@ -1,7 +1,7 @@
-import { Button } from "./button";
-import buttonIcon from "../assets/icons/icon-plus.svg";
-import "../styles/button.scss";
-import "../styles/your-claims.scss";
+import buttonIcon from "../../assets/icons/icon-plus.svg";
+import { Button } from "../button";
+import "../../styles/button.scss";
+import "../../styles/your-claims.scss";
 
 export const YourClaimsTitle = () => {
   return (

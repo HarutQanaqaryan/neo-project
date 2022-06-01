@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { paginationsNumberCells } from "../helpers/paginetionNumbers";
-import "../styles/pagination.scss";
-import { PaginationNavLink } from "./paginationLink";
-import elipsis from "../assets/icons/pagination-elipsis.svg";
+import "../../styles/pagination.scss";
+import elipsis from "../../assets/icons/pagination-elipsis.svg";
+import { paginationsNumberCells } from "../../helpers/paginetionNumbers";
+import { getPaginateBlock } from "./getPaginateNums";
 
 interface PageType {
   claimPerPage: number;
@@ -23,13 +23,16 @@ export const Pagination = (prop: PageType) => {
   const url = useLocation();
   let beforePages = prop.currentPage - 2;
   let afterPages = prop.currentPage + 2;
+  const firstElem = pageNums[0];
+  const lastElem = pageNums[pageNums.length - 1];
 
   useEffect(() => {
-    sessionStorage.setItem("Current Page", String(prop.currentPage));
     sessionStorage.setItem("Pages", String(pageNums.length));
-    setIsFirstElem(prop.currentPage === pageNums[0].num);
-    setIsLastElem(prop.currentPage === pageNums[pageNums.length - 1].num);
-  }, [pageNums.length, prop.currentPage, pageNums]);
+
+    setIsFirstElem(prop.currentPage === firstElem.num);
+
+    setIsLastElem(prop.currentPage === lastElem.num);
+  }, [pageNums.length, prop.currentPage, pageNums, firstElem, lastElem]);
 
   useEffect(() => {
     setPageNums(
@@ -41,17 +44,6 @@ export const Pagination = (prop: PageType) => {
     );
   }, [prop.currentPage, pageNums.length]);
 
-  const renderPaginate = (num: number, current: boolean) => {
-    return (
-      <PaginationNavLink
-        url={url.pathname}
-        current={current}
-        num={num}
-        paginate={prop.paginate}
-        key={Math.random()}
-      />
-    );
-  };
   return (
     <div className="your-claims-pagination">
       <NavLink
@@ -64,31 +56,33 @@ export const Pagination = (prop: PageType) => {
         {"<"}
       </NavLink>
       <>
-        {renderPaginate(pageNums[0].num, pageNums[0].current)}
-        {prop.currentPage > 3 && (
+        <NavLink
+          to={`${url.pathname}`}
+          className={`pagination-item ${firstElem.current && "current"}`}
+          onClick={() => prop.paginate(firstElem.num)}
+        >
+          {firstElem.num}
+        </NavLink>
+
+        {prop.currentPage > 5 && (
           <img src={elipsis} alt="Ellipsis" className="pagination-ellipsis" />
         )}
-        {pageNums.map((el) => {
-          if (el.num === 1) {
-            return false;
-          }
-          if (el.num === pageNums.length) {
-            return false;
-          }
-          if (el.num >= beforePages && el.num <= prop.currentPage)
-            return renderPaginate(el.num, el.current);
-          if (el.num <= afterPages && el.num >= prop.currentPage)
-            return renderPaginate(el.num, el.current);
-          return true;
-        })}
+
+        {getPaginateBlock(pageNums, beforePages, afterPages, prop, url)}
+
         {prop.currentPage < pageNums.length - 2 && (
           <img src={elipsis} alt="Ellipsis" className="pagination-ellipsis" />
         )}
-        {renderPaginate(
-          pageNums[pageNums.length - 1].num,
-          pageNums[pageNums.length - 1].current
-        )}
+
+        <NavLink
+          to={`${url.pathname}`}
+          className={`pagination-item ${lastElem.current && "current"}`}
+          onClick={() => prop.paginate(lastElem.num)}
+        >
+          {lastElem.num}
+        </NavLink>
       </>
+
       <NavLink
         to={`${url.pathname}`}
         className={`pagination-item ${

@@ -1,5 +1,6 @@
-import { Button } from "./button";
-import { TextField } from "./textField";
+import { Button } from "../button";
+import { TextField } from "../textField";
+
 
 export const RegisterForm = () => {
   return (

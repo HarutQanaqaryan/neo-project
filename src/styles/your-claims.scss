@@ -1,8 +1,4 @@
 @import "./vars/variables.scss";
-.your-claims_block {
-  display: inline-flex;
-  height: 100vh;
-}
 .your-claims-head {
   display: flex;
   justify-content: space-between;
@@ -26,5 +22,8 @@
 }
 
 .your-claims {
-    width: 94vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
 }

@@ -1,5 +1,5 @@
-import "../styles/table-head.scss";
-import arrowsIcon from "../assets/icons/icon-arows.svg";
+import "../../styles/table-head.scss";
+import arrowsIcon from "../../assets/icons/icon-arows.svg";
 
 export const tableHeaders = ["Title", "Created", "Type", "Status", "Actions"];
 

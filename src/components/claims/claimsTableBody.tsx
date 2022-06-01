@@ -1,7 +1,6 @@
-import { checkClaimStatusColor } from "../helpers/checkClaimStatusColor";
-import { checkClaimTypeColor } from "../helpers/checkClaimTypeColor";
-import "../styles/table-body.scss";
-import { Button } from "./button";
+import { checkClaimStatusColor } from "../../helpers/checkClaimStatusColor";
+import { checkClaimTypeColor } from "../../helpers/checkClaimTypeColor";
+import "../../styles/table-body.scss";
 interface TableBodyItemType {
   claims: Array<any>;
 }

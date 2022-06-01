@@ -1,10 +1,11 @@
 .menu {
-  width: 6vw;
-  height: 100vh;
+  width: 5vw;
   background: linear-gradient(180deg, #d5eee2 0%, #7db59a 43.23%);
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
+  height: auto;
+  position:-webkit-sticky; position:sticky;
 }
 .menu-company-logo {
   margin: 32px 0px 47px 0px;

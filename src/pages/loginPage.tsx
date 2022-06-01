@@ -1,9 +1,9 @@
 import { Footer } from "../components/footer";
-import { LoginImg } from "../components/loginImg";
 import "../styles/login-user-authorization.scss";
 import "../styles/button.scss";
 import mainIcon from "../assets/main-logo.svg";
-import { LoginForm } from "../components/loginForm";
+import { LoginForm } from "../components/login-form/loginForm";
+import { LoginImg } from "../components/login-form/loginImg";
 
 export const LoginUser = () => {
   return (

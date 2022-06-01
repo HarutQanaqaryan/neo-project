@@ -1,4 +1,4 @@
-@import  "./vars/variables.scss";
+@import "./vars/variables.scss";
 
 .text-field_label {
   font-family: $baseFont;
@@ -37,4 +37,5 @@
 }
 .header-search_input {
   width: 35%;
+  margin: 0%;
 }

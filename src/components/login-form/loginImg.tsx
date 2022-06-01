@@ -1,5 +1,5 @@
-import  mainImg  from "../assets/main-img.svg";
-import "../styles/login-page-img.scss"
+import  mainImg  from "../../assets/main-img.svg";
+import "../../styles/login-page-img.scss"
 
 export const LoginImg = () => {
   return (

@@ -1,7 +1,8 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import { YourClaims } from "./pages/yourClaims";
+import { YourClaims } from "./components/claims/yourClaims";
+import { Home } from "./pages/home";
 import { LoginUser } from "./pages/loginPage";
 import { Registration } from "./pages/registerPage";
 
@@ -10,8 +11,9 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<YourClaims />} />
+          <Route path="/" element={<LoginUser />} />
           <Route path="registration" element={<Registration />} />
+          <Route path="/home" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </div>

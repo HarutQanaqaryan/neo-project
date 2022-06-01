@@ -1,7 +1,8 @@
-import { LoginImg } from "../components/loginImg";
+
 import mainIcon from "../assets/main-logo.svg";
 import { Footer } from "../components/footer";
-import { RegisterForm } from "../components/registerForm";
+import { LoginImg } from "../components/login-form/loginImg";
+import { RegisterForm } from "../components/register-form/registerForm";
 
 export const Registration = () => {
   return (

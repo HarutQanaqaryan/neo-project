@@ -1,9 +1,10 @@
 import { TableBody } from "./claimsTableBody";
 import { TableHeader } from "./claimsTableHeader";
-import "../styles/claims-table.scss";
+import "../../styles/claims-table.scss";
 import { YourClaimsTitle } from "./yourClaimsTitle";
-import { Pagination } from "./pagination";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { Pagination } from "../pagination/pagination";
+
 interface ClaimsTableType {
   claims: Array<any>;
 }
