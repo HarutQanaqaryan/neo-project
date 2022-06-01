@@ -5,7 +5,7 @@
   align-items: center;
   margin-bottom: 30px;
 }
-.claims-head_title, .create-new-claim-header {
+.claims-head_title {
   font-family: $baseFont;
   font-style: normal;
   font-weight: 700;
@@ -13,9 +13,10 @@
   line-height: 44px;
   color: #000000;
   margin: 0%;
+  margin-bottom: 40px;
 }
 
-.claims-block, .create-new-claim-block {
+.claims-block {
   margin: 0%;
   padding: 50px 40px 40px 60px;
   width: 94vw;

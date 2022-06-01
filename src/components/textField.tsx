@@ -1,4 +1,4 @@
-import "../styles/text-field.scss";
+import "../styles/text-field-select.scss";
 
 interface TextFieldProps {
   label?: string;

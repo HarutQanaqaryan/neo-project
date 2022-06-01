@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { CreateClaim } from "./pages/create-claim";
 import { Home } from "./pages/home";
+import { IncomingClaims } from "./pages/incoming-claims";
 import { LoginUser } from "./pages/loginPage";
 import { Registration } from "./pages/registerPage";
 
@@ -15,6 +16,7 @@ function App() {
           <Route path="registration" element={<Registration />} />
           <Route path="/home" element={<Home />} />
           <Route path="/create-claim" element={<CreateClaim />} />
+          <Route path="/incoming-claim" element={<IncomingClaims />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -46,3 +46,15 @@
     background: #4f896c;
   }
 }
+
+.decline {
+  background: #E84393;
+  border: none;
+  color: white;
+  &:hover {
+    background: #B03671;
+  }
+  &:active {
+    background: #832552;
+  }
+}

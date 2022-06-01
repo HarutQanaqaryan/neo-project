@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { checkClaimTypeColor } from "../helpers/checkClaimTypeColor";
-import "../styles/text-field.scss";
+import "../styles/text-field-select.scss";
 
 interface SelectProps {
   label?: string;

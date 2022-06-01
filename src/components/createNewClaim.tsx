@@ -4,11 +4,12 @@ import { Select } from "./select";
 import selectIcon from "../assets/icons/arrow-bottom.svg";
 import { claimTypes } from "../helpers/claimTypes";
 import { Button } from "./button";
+import { ClaimsTitle } from "./claims/claimsTitle";
 
 export const CreateNewClaim = () => {
   return (
-    <div className="create-new-claim-block">
-      <h4 className="create-new-claim-header">Creating new claim</h4>
+    <div className="claims-block">
+      <ClaimsTitle title="Creating new claim" />
       <div className="create-new-claim-inputs">
         <TextField
           placeholder="Type claim title"

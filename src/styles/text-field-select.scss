@@ -1,6 +1,6 @@
 @import "./vars/variables.scss";
 
-.text-field_label,
+.text-field_label, .incoming-claim-field-label,
 .select_label {
   font-family: $baseFont;
   font-style: normal;
@@ -10,7 +10,10 @@
   letter-spacing: 2.5px;
   color: #adadad;
 }
-.text-field_input,
+.incoming-claim-fields {
+  margin-bottom: 40px;
+}
+.text-field_input, .incoming-claim-field,
 .select {
   height: 48px;
   background: #f0f0f0;
@@ -56,6 +59,9 @@
   color: #2d3436bc;
   display: flex;
   align-items: center;
+}
+.incoming-claim-field {
+  max-width: 550px;
 }
 .select {
   max-width: 550px;
