@@ -24,7 +24,7 @@ export const ClaimsTable = (prop: ClaimsTableType) => {
   const prevPage = () => currentPage > 1 && setCurrentPage(currentPage - 1);
 
   return (
-    <div className="your-claims-table-block">
+    <div className="claims-block">
       <YourClaimsTitle />
       <table className="claims-table">
         <TableHeader />

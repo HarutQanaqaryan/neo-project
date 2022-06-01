@@ -1,0 +1,48 @@
+@import "./vars/variables.scss";
+
+.create-new-claim {
+  display: flex;
+}
+.create-new-claim {
+  width: 82px;
+  height: 48px;
+  font-family: $baseFont;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  letter-spacing: 0.25px;
+  color: #858585;
+  margin-right: 35px;
+  border-radius: $baseBorderRadius;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.cancel {
+  border: 1px solid #adadad;
+  background-color: transparent;
+  &:hover {
+    color: #7db59a;
+    border: 1px solid #7db59a;
+  }
+  &:active {
+    color: #4f896c;
+    border: 1px solid #4f896c;
+  }
+}
+.create {
+  background: #7db59a;
+  border: none;
+  color: white;
+  &:hover {
+    background: #5b9479;
+  }
+  &:active {
+    background: #4f896c;
+  }
+}

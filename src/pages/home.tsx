@@ -1,12 +1,10 @@
 import { YourClaims } from "../components/claims/yourClaims";
-import { Menu } from "../components/menu";
-import "../styles/home.scss"
+import { ClaimsWrapper } from "../components/claimsWrapper";
 
 export const Home = () => {
   return (
-    <div className="home-page">
-      <Menu />
+    <ClaimsWrapper isSearchInput={true}>
       <YourClaims />
-    </div>
+    </ClaimsWrapper>
   );
 };

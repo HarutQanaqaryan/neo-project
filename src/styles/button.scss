@@ -1,7 +1,7 @@
 @import "./vars/variables.scss";
 
 .login-user_btn,
-.your-claims-head_btn,
+.claims-head_btn,
 .claim-status_btn {
   background: #7db59a;
   width: 100%;
@@ -25,7 +25,7 @@
     background: #4f896c;
   }
 }
-.your-claims-head_btn {
+.claims-head_btn {
   width: 200px;
 }
 

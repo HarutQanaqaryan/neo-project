@@ -7,11 +7,12 @@ import logOutIcon from "../assets/icons/icon-log-out.svg";
 
 interface HeaderComponentProps {
   name: string;
+  isSearch?: boolean;
 }
 export const Header = (prop: HeaderComponentProps) => {
   return (
     <div className="header">
-      <TextField placeholder="Search" icon={searchIcon} uniqueStyle="header-search_input"/>
+      {prop.isSearch && <TextField placeholder="Search" icon={searchIcon} uniqueStyle="header-search_input"/>}
       <div className="menu-user-info">
         <img
           src={notificationIcon}

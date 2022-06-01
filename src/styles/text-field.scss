@@ -1,6 +1,7 @@
 @import "./vars/variables.scss";
 
-.text-field_label {
+.text-field_label,
+.select_label {
   font-family: $baseFont;
   font-style: normal;
   font-weight: 800;
@@ -9,7 +10,8 @@
   letter-spacing: 2.5px;
   color: #adadad;
 }
-.text-field_input {
+.text-field_input,
+.select {
   height: 48px;
   background: #f0f0f0;
   border-radius: $baseBorderRadius;
@@ -38,4 +40,62 @@
 .header-search_input {
   width: 35%;
   margin: 0%;
+}
+.create-new-claim-input {
+  max-width: 550px;
+  margin-bottom: 40px;
+}
+.select-input {
+  width: 100%;
+  height: 100%;
+  font-family: $baseFont;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #2d3436bc;
+  display: flex;
+  align-items: center;
+}
+.select {
+  max-width: 550px;
+  cursor: pointer;
+  &:hover {
+    background: #c2c2c2;
+  }
+}
+.select-icon {
+  width: 12px;
+}
+.select-options {
+  padding: 0px;
+  background: #f0f0f0;
+  margin: 0%;
+  border-radius: $baseBorderRadius;
+  z-index: 999;
+  position: absolute;
+  width: 550px;
+}
+.select-option {
+  font-family: $baseFont;
+  color: #2d3436bc;
+  list-style-type: none;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  cursor: pointer;
+  &:hover {
+    background: #c2c2c2;
+    border-radius: $baseBorderRadius;
+  }
+}
+
+.select-option_cell {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  margin-right: 16px;
+  border-radius: 50%;
+  margin-top: 2px;
 }
