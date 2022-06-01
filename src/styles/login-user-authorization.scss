@@ -2,7 +2,8 @@
 
 .login-user-page {
   display: flex;
-  height: 100vh;
+  height: 90vh;
+  overflow-y: hidden;
 }
 .login-user-authorization_block {
   display: flex;

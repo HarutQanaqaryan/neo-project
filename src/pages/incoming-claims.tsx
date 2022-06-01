@@ -1,12 +1,11 @@
 import selectIcon from "../assets/icons/arrow-bottom.svg";
 import { Button } from "../components/button";
 import { ClaimsTitle } from "../components/claims/claimsTitle";
-import { ClaimsWrapper } from "../components/claimsWrapper";
 import { IncomingClaimField } from "../components/incomingClaimField";
+import "../styles/button.scss"
 
 export const IncomingClaims = () => {
   return (
-    <ClaimsWrapper>
       <div className="claims-block">
         <ClaimsTitle title="Incoming claim" />
         <IncomingClaimField
@@ -19,6 +18,5 @@ export const IncomingClaims = () => {
         <Button text="Create" className="create-new-claim create" />
         <Button text="Decline" className="create-new-claim decline" />
       </div>
-    </ClaimsWrapper>
   );
 };

@@ -1,22 +1,21 @@
-import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import { CreateClaim } from "./pages/create-claim";
-import { Home } from "./pages/home";
+import { CreateNewClaim } from "./components/createNewClaim";
+import { MainWrapper } from "./pages/ClaimWrapper";
 import { IncomingClaims } from "./pages/incoming-claims";
-import { LoginUser } from "./pages/loginPage";
-import { Registration } from "./pages/registerPage";
+import { LoginRegister } from "./pages/loginRegister";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<LoginUser />} />
-          <Route path="registration" element={<Registration />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/create-claim" element={<CreateClaim />} />
-          <Route path="/incoming-claim" element={<IncomingClaims />} />
+          <Route path="/" element={<LoginRegister />} />
+          <Route path="registration" element={<LoginRegister />} />
+          <Route path="home" element={<MainWrapper />}>
+            <Route path="create-claim" element={<CreateNewClaim />} />
+            <Route path="incoming-claim" element={<IncomingClaims />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>

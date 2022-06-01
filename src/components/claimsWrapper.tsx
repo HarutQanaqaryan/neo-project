@@ -11,7 +11,7 @@ export const ClaimsWrapper = (prop: ClaimWrapperType) => {
     <div className="claims-main-wrapper">
       <Menu />
       <div className="claims-wrapper">
-        <Header name="Ivan Ivanov" isSearch={prop.isSearchInput} />
+        <Header name="Ivan Ivanov" />
         {prop.children}
       </div>
     </div>

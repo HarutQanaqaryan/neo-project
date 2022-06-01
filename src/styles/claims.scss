@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 .claims-head_title {
   font-family: $baseFont;
@@ -21,7 +21,6 @@
   padding: 50px 40px 40px 60px;
   width: 94vw;
   height: 100%;
-  z-index: 1;
 }
 .create-new-claim-header {
   margin-bottom: 30px;

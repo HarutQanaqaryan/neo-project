@@ -4,15 +4,16 @@ import notificationIcon from "../assets/icons/notification.svg";
 import "../styles/header.scss";
 import userIcon from "../assets/user.jpg";
 import logOutIcon from "../assets/icons/icon-log-out.svg";
+import { useLocation } from "react-router-dom";
 
 interface HeaderComponentProps {
   name: string;
-  isSearch?: boolean;
 }
 export const Header = (prop: HeaderComponentProps) => {
+  const url = useLocation()
   return (
     <div className="header">
-      {prop.isSearch && <TextField placeholder="Search" icon={searchIcon} uniqueStyle="header-search_input"/>}
+      {url.pathname === "/home" && <TextField placeholder="Search" icon={searchIcon} uniqueStyle="header-search_input"/>}
       <div className="menu-user-info">
         <img
           src={notificationIcon}
