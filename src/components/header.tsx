@@ -2,7 +2,7 @@ import { TextField } from "./textField";
 import searchIcon from "../assets/icons/search.svg";
 import notificationIcon from "../assets/icons/notification.svg";
 import "../styles/header.scss";
-import userIcon from "../assets/user.jpg";
+import userIcon from "../assets/user.png";
 import logOutIcon from "../assets/icons/icon-log-out.svg";
 import { useLocation } from "react-router-dom";
 

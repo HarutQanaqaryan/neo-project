@@ -30,6 +30,7 @@
     font-size: 16px;
   }
 }
+
 .claims-head_btn {
   width: 200px;
 }
@@ -78,6 +79,10 @@
   }
   &:active {
     background: #4f896c;
+  }
+  @media screen and (max-width: 800px) {
+    width: 48px;
+    display: inline-flex;
   }
 }
 

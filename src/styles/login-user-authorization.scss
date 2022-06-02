@@ -3,7 +3,7 @@
 .login-user-page {
   display: flex;
   height: 91vh;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 .login-user-authorization_block {
   display: flex;
@@ -20,7 +20,8 @@
   margin-bottom: 10px;
   @media screen and (max-width: 800px) {
     margin-top: 20px;
-    width: 60%;
+    width: 100px;
+    max-width: 70%;
   }
 }
 .login-user-authorization_form {

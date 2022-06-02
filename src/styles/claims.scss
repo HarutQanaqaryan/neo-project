@@ -14,6 +14,10 @@
   color: #000000;
   margin: 0%;
   margin-bottom: 40px;
+  @media screen and (max-width: 800px) {
+    font-size: 24px;
+    display: inline-flex;
+  }
 }
 
 .claims-block {
@@ -24,4 +28,32 @@
 }
 .create-new-claim-header {
   margin-bottom: 30px;
+}
+
+.your-claims-mobile-title {
+  display: flex;
+  justify-content: space-between;
+}
+.your-claims-mobile {
+  width: 100%;
+  padding: 20px 10px 20px 10px;
+}
+.opened {
+  overflow-y: hidden;
+}
+.mobile-wrapper {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  overflow: hidden;
+  overflow-x: hidden;
+}
+.mobile-wrapper-opacity-background {
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.6);
 }

@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { CreateNewClaim } from "./components/createNewClaim";
-import { MainWrapper } from "./pages/ClaimWrapper";
+import { MainWrapper } from "./pages/mainWrapper";
 import { IncomingClaims } from "./pages/incoming-claims";
 import { LoginRegister } from "./pages/loginRegister";
 

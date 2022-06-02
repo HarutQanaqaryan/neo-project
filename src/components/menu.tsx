@@ -1,15 +1,18 @@
 import { menuItems } from "../helpers/menuItems";
 import companyLogo from "../assets/company-logo-lil.svg";
 import "../styles/menu.scss";
-
-export const Menu = () => {
+interface MenuTypes {
+  mobile?: boolean
+}
+export const Menu = (prop: MenuTypes) => {
   return (
     <div className="menu">
-      <img src={companyLogo} alt="Company Logo" className="menu-company-logo"/>
+      {!prop.mobile && <img src={companyLogo} alt="Company Logo" className="menu-company-logo"/>}
       {menuItems.map(({ name, icon, current }) => {
         return (
           <span key={name} className={`menu-item ${current && "menu-item_current"}`}>
             <img src={icon} alt={name} />
+            {prop.mobile && <span className="menu-item-title">{name}</span>}
           </span>
         );
       })}
