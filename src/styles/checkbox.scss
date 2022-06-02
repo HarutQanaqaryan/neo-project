@@ -1,7 +1,7 @@
 @import  "./vars/variables.scss";
 
 .checkbox-block {
-  margin: 28px 0px 28px 0px;
+  margin: 20px 0px 20px 0px;
   display: flex;
 }
 .checkbox-label {
@@ -12,4 +12,7 @@
   line-height: 17px;
   color: #2d3436;
   margin-left: 11px;
+  @media screen and (max-width: 800px) {
+    font-size: 12px;
+  }
 }

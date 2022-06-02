@@ -1,6 +1,7 @@
 @import "./vars/variables.scss";
 
-.text-field_label, .incoming-claim-field-label,
+.text-field_label,
+.incoming-claim-field-label,
 .select_label {
   font-family: $baseFont;
   font-style: normal;
@@ -9,16 +10,20 @@
   line-height: 15px;
   letter-spacing: 2.5px;
   color: #adadad;
+  @media screen and (max-width: 800px) {
+    font-size: 12px;
+  }
 }
 .incoming-claim-fields {
-  margin-bottom: 40px;
+  margin-top: 40px;
 }
-.text-field_input, .incoming-claim-field,
+.text-field_input,
+.incoming-claim-field,
 .select {
   height: 48px;
   background: #f0f0f0;
   border-radius: $baseBorderRadius;
-  width: 100%;
+  max-width: 100%;
   display: flex;
   padding: 0px 16px 0px 16px;
   margin-top: 8px;
@@ -35,10 +40,19 @@
     font-size: 18px;
     line-height: 22px;
     color: #2d3436;
+    @media screen and (max-width: 800px) {
+      font-size: 16px;
+    }
+  }
+  @media screen and(max-width: 800px) {
+    height: 48px;
   }
 }
 .login-authorization_input {
-  margin-bottom: 35px;
+  margin-bottom: 30px;
+  @media screen and (max-width: 800px) {
+    max-width: 350px;
+  }
 }
 .header-search_input {
   width: 35%;
@@ -104,4 +118,10 @@
   margin-right: 16px;
   border-radius: 50%;
   margin-top: 2px;
+}
+
+.text-field-icon {
+  @media screen and(max-width: 800px) {
+    width: 25px;
+  }
 }

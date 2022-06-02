@@ -1,6 +1,6 @@
 import "../styles/checkbox.scss";
 interface CheckBoxProps {
-  checked: boolean;
+  checked?: boolean;
   label: string;
 }
 

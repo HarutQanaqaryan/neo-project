@@ -12,7 +12,7 @@ export const TextField = (prop: TextFieldProps) => {
       <label className="text-field_label">{prop.label}</label>
       <div className="text-field_input" tabIndex={1}>
         <input placeholder={prop.placeholder} />
-        {prop.icon && <img src={prop.icon} alt="icon" />}
+        {prop.icon && <img src={prop.icon} alt="icon" className="text-field-icon"/>}
       </div>
     </div>
   );

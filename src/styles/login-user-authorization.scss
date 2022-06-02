@@ -1,9 +1,9 @@
-@import  "./vars/variables.scss";
+@import "./vars/variables.scss";
 
 .login-user-page {
   display: flex;
-  height: 90vh;
-  overflow-y: hidden;
+  height: 91vh;
+  overflow-x: hidden;
 }
 .login-user-authorization_block {
   display: flex;
@@ -11,11 +11,21 @@
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
-  padding: 70px 130px 100px 130px;
+  padding: 70px 130px 110px 130px;
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
 }
-
+.login-user-authorization_logo {
+  margin-bottom: 10px;
+  @media screen and (max-width: 800px) {
+    margin-top: 20px;
+    width: 60%;
+  }
+}
 .login-user-authorization_form {
   width: 50vh;
+  height: 100vh;
 }
 .login-user_request-register {
   font-family: $baseFont;
@@ -25,6 +35,11 @@
   line-height: 17px;
   color: #2d3436;
   margin-top: 16px;
+  @media screen and (max-width: 800px) {
+    font-size: 12px;
+    width: 100vw;
+    text-align: center;
+  }
 }
 .login-user_request-register_link {
   text-decoration: none;

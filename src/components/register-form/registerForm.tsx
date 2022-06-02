@@ -25,7 +25,6 @@ export const RegisterForm = () => {
         label="PASSWORD"
         uniqueStyle="login-authorization_input"
       />
-      <TextField placeholder="Type your password again" label="PASSWORD AGAIN" uniqueStyle="login-authorization_input" />
       <Button text="Register" className="login-user_btn" />
     </form>
   );
