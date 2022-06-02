@@ -39,7 +39,7 @@
   display: flex;
 }
 .create-new-claim {
-  width: 82px;
+  width: 86px;
   height: 48px;
   font-family: $baseFont;
   font-style: normal;
@@ -81,11 +81,12 @@
     background: #4f896c;
   }
   @media screen and (max-width: 800px) {
-    width: 48px;
     display: inline-flex;
   }
 }
-
+.create-mobile {
+  width: 48px;
+}
 .decline {
   background: #e84393;
   border: none;

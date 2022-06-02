@@ -24,7 +24,7 @@ export const Select = (prop: SelectProps) => {
   };
 
   return (
-    <div className={`${prop.uniqueStyle}`}>
+    <div className={`select-wrapper ${prop.uniqueStyle}`}>
       <label className="select_label">{prop.label}</label>
       <div className="select" onClick={openOptions}>
         <div className="select-input">{option}</div>
