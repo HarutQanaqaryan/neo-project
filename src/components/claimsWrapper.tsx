@@ -7,11 +7,18 @@ interface ClaimWrapperType {
   isSearchInput?: boolean
 }
 export const ClaimsWrapper = (prop: ClaimWrapperType) => {
+  const user = localStorage.getItem("User")
+  let userName = ""
+
+  if(typeof user === "string"){
+    userName = JSON.parse(user).fullName
+  }
+
   return (
     <div className="claims-main-wrapper">
       <Menu />
       <div className="claims-wrapper">
-        <Header name="Ivan Ivanov" />
+        <Header name={userName} />
         {prop.children}
       </div>
     </div>

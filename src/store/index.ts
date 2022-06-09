@@ -8,9 +8,11 @@ import {
 } from "redux";
 import thunk, { ThunkAction, ThunkDispatch } from "redux-thunk";
 import { loginReducer } from "./reducers/loginReducer";
+import { registerReducer } from "./reducers/registerReducer";
 
 const rootReducer = combineReducers({
   login: loginReducer,
+  register: registerReducer
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunk));

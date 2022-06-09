@@ -15,7 +15,7 @@ export const LoginForm = () => {
   const navigate = useNavigate();
   const methods = useForm();
   const dispatch = useTypedDispatch();
-  const { success, user, error } = useTypedSelector((state) => state.login);
+  const { success, error } = useTypedSelector((state) => state.login);
 
   const onSubmit = async (data: any) => {
     dispatch(loginUser(data));
@@ -23,7 +23,7 @@ export const LoginForm = () => {
 
   useEffect(() => {
     success && navigate("../home", { replace: true });
-  }, [navigate, success, user]);
+  }, [navigate, success]);
 
   const checkedKeepMeLoggedIn = () => {
     isChecked ? setIsChecked(false) : setIsChecked(true);

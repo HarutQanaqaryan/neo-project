@@ -1,52 +1,86 @@
 import { FormProvider, useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import {
+  emailPattern,
+  passwordPattern,
+  userNamePattern,
+} from "../../helpers/contstants";
+import { useTypedDispatch, useTypedSelector } from "../../store";
+import { registerUser } from "../../store/action-creators/register";
 import { Button } from "../button";
 import { TextField } from "../textField";
 
 export const RegisterForm = () => {
-  const navigate = useNavigate();
+  const { success, error } = useTypedSelector((state) => state.register);
+  const dispatch = useTypedDispatch();
   const methods = useForm();
 
   const onSubmit = (data: any) => {
-    navigate("../home", { replace: true });
-    console.log(data);
+    dispatch(registerUser(data));
+    methods.reset();
   };
 
   return (
     <FormProvider {...methods}>
-      <form className="login-user-authorization_form">
+      <form
+        className="login-user-authorization_form"
+        onSubmit={methods.handleSubmit(onSubmit)}
+      >
         <TextField
-          name="First Name"
+          name={"firstName"}
           placeholder="Type your first name"
           label="FIRST NAME"
           uniqueStyle="login-authorization_input"
-          value=""
-          onChange={() => console.log("a")}
+          pattern={{
+            value: userNamePattern,
+            message: "Only latin letters",
+          }}
+          error={methods.formState.errors.firstName}
         />
         <TextField
-          name="Last Name"
+          name={"lastName"}
           placeholder="Type your last name"
           label="LAST NAME"
           uniqueStyle="login-authorization_input"
-          value=""
-          onChange={() => console.log("a")}
+          pattern={{
+            value: userNamePattern,
+            message: "Only latin letters",
+          }}
+          error={methods.formState.errors.lastName}
         />
         <TextField
-          name="Email"
+          name={"email"}
           placeholder="Type your e-mail"
           label="E-MAIL"
           uniqueStyle="login-authorization_input"
-          value=""
-          onChange={() => console.log("a")}
+          pattern={{
+            value: emailPattern,
+            message: "Mail should look like this: johnsmith@gmail.com",
+          }}
+          error={methods.formState.errors.email}
         />
         <TextField
-          name="Password"
+          name={"password"}
           placeholder="Type your password"
           label="PASSWORD"
           uniqueStyle="login-authorization_input"
-          value=""
-          onChange={() => console.log("a")}
+          pattern={{
+            value: passwordPattern,
+            message:
+              "The password must be 6-18 characters long and only Latin letters",
+          }}
+          error={methods.formState.errors.password}
+          type="password"
         />
+        {success && (
+          <span className="user-registered">
+            Are you registered{" "}
+            <NavLink to="/" className="user-registered_link">
+              Login
+            </NavLink>
+          </span>
+        )}
+        {error && <span className="text-field-error_message">Ops... we have a problem :( <br /> Try again</span>}
         <Button
           text="Register"
           className="login-user_btn"

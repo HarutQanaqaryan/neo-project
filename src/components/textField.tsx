@@ -27,7 +27,7 @@ export const TextField = (prop: TextFieldProps) => {
           value={prop.value}
           type={prop.type}
           {...register.register(prop.name, {
-            required: `${prop.name} is require field`,
+            required: "Require field",
             pattern: prop.pattern
           })}
         />

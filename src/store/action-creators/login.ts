@@ -1,7 +1,7 @@
 import axios from "axios";
 import { TypedDispatch, TypedThunk } from "..";
 import { BASE_URL } from "../../helpers/contstants";
-import { SET_USER, SignInData } from "../types";
+import { SignInData } from "../types";
 import { LOGIN_ERROR, LOGIN_SUCCESS } from "../types";
 
 export const loginUser = (data: SignInData): TypedThunk => {
@@ -12,8 +12,16 @@ export const loginUser = (data: SignInData): TypedThunk => {
         password: data.password,
       });
       dispatch({ type: LOGIN_SUCCESS, payload: true });
-      dispatch({ type: SET_USER, payload: response.data });
-      localStorage.setItem("User Data", JSON.stringify(response.data));
+      localStorage.setItem("Token", JSON.stringify(response.data.token));
+      localStorage.setItem(
+        "User",
+        JSON.stringify({
+          email: response.data.email,
+          fullName: response.data.fullName,
+          id: response.data.user_id,
+          role: response.data.role.slug,
+        })
+      );
     } catch (e) {
       dispatch({
         type: LOGIN_ERROR,
