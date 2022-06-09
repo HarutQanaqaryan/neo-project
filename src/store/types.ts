@@ -5,6 +5,10 @@ export const SET_USER = "SET_USER";
 export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
 export const REGISTER_ERROR = "REGISTER_ERROR";
 
+export const GET_CLAIMS_SUCCESS = "GET_CLAIMS_SUCCESS";
+export const GET_CLAIMS_ERROR = "GET_CLAIMS_ERROR";
+export const GET_CLAIMS_LOADING = "GET_CLAIMS_LOADING"
+
 interface SignOutAction {
   type: typeof SIGN_OUT;
 }
@@ -48,4 +52,26 @@ export interface RegisterState {
   error: boolean;
 }
 
+export interface GetClaimsData {
+  loading: boolean;
+  data: Array<any>
+  error: boolean;
+}
+
+interface GetClaimsLoadingAction {
+  type: typeof GET_CLAIMS_LOADING;
+  payload: boolean;
+}
+
+interface GetClaimsSuccessAction {
+   type: typeof GET_CLAIMS_SUCCESS;
+   payload: Array<any>
+}
+
+interface GetClaimsErrorAction {
+  type: typeof GET_CLAIMS_ERROR;
+  payload: boolean;
+}
+
 export type AuthAction =  SignOutAction | SetErrorAction | SetSuccessAction | RegisterErrorAction | RegisterSuccessAction;
+export type GetClaimsAction = GetClaimsSuccessAction | GetClaimsErrorAction | GetClaimsLoadingAction;

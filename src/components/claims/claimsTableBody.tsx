@@ -7,26 +7,26 @@ interface TableBodyItemType {
 export const TableBody = (prop: TableBodyItemType) => {
   return (
     <tbody className="table-body">
-      {prop.claims.map(({ id, title, created, type, status, actions }) => (
-        <tr key={id}>
+      {prop.claims.map(({ _id, title, createdAt, type, status }) => (
+        <tr key={_id}>
           <td className="claim-cell">{title}</td>
-          <td className="claim-cell">{created}</td>
+          <td className="claim-cell">{createdAt.substring(0, 10)}</td>
           <td className="claim-cell">
             <span
               className="claim-type"
-              style={checkClaimTypeColor(type)}
+              style={checkClaimTypeColor(type ? type.name : "")}
             ></span>
-            {type}
+            {type ? type.name : ""}
           </td>
           <td className="claim-cell">
             <span
-              style={{ background: checkClaimStatusColor(status) }}
+              style={{ background: checkClaimStatusColor(status ? status.name : "") }}
               className="claim-status"
             >
-              {status}
+              {status ? status.name : ""}
             </span>
           </td>
-          <td className="claim-actions">{actions}</td>
+          <td className="claim-actions">BUUUUUGGGG</td>
         </tr>
       ))}
     </tbody>

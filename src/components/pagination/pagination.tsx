@@ -64,7 +64,7 @@ export const Pagination = (prop: PageType) => {
           {firstElem.num}
         </NavLink>
 
-        {prop.currentPage > 5 && (
+        {prop.currentPage > 4 && (
           <img src={elipsis} alt="Ellipsis" className="pagination-ellipsis" />
         )}
 

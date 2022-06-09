@@ -7,12 +7,14 @@ import {
   AnyAction,
 } from "redux";
 import thunk, { ThunkAction, ThunkDispatch } from "redux-thunk";
+import { claimsReducer } from "./reducers/claimsReducer";
 import { loginReducer } from "./reducers/loginReducer";
 import { registerReducer } from "./reducers/registerReducer";
 
 const rootReducer = combineReducers({
   login: loginReducer,
-  register: registerReducer
+  register: registerReducer,
+  claims: claimsReducer
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunk));

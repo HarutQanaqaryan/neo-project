@@ -1,3 +1,5 @@
+@import "./vars/variables.scss";
+
 .claims-table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -5,4 +7,27 @@
   overflow: hidden;
   width: inherit;
   max-width: 100%;
+}
+.claims-block_loading,
+.claims-block_error {
+  align-items: center;
+  margin-top: 50px;
+  width: 95vw;
+  font-size: 20px;
+  text-align: center;
+  font-family: $baseFont;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.claims-block-no-claims {
+  font-family: $baseFont;
+  width: 95vw;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 50px;
+  @media screen and (max-width: 800px) {
+    font-size: 14px;
+  }
 }

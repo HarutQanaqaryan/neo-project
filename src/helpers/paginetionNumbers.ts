@@ -7,9 +7,11 @@ const checkPaginationNumbers = (totalClaims: number, claimPerPage: number) => {
   return pageNums;
 };
 
-export const paginationsNumberCells = (totalClaims: number, claimPerPage: number) => {
-  return checkPaginationNumbers(totalClaims, claimPerPage).map((num) => ({
-    num: num,
-    current: num === 1 ? true : false,
-  }));
+export const paginationsNumberCells = (
+  totalClaims: number,
+  claimPerPage: number
+) => {
+  return checkPaginationNumbers(totalClaims, claimPerPage).map((num) => {
+    return { num: num, current: num === 1 ? true : false };
+  });
 };
