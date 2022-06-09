@@ -10,7 +10,6 @@ import { mockData } from "../helpers/mockData";
 
 export const MainWrapper = () => {
   const url = useLocation();
-  console.log(url.pathname);
 
   const renderComponent = () => {
     switch (url.pathname) {

@@ -11,7 +11,7 @@ export const YourClaimsMobile = (prop: YourClaimsMobileType) => {
     <div className="your-claims-mobile">
       <div className="your-claims-mobile-title">
         <ClaimsTitle title="Your Claims" />
-        <Button className="claims-head_btn create-mobile" icon={buttonIcon} />
+        <Button className="claims-head_btn create-mobile" icon={buttonIcon} onClick={() => console.log("a")}/>
       </div>
         {prop.claims.map(({ id, title, created, type, status }) => (
           <ClaimCard

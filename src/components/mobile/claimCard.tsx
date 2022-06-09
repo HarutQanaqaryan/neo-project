@@ -37,7 +37,7 @@ export const ClaimCard = (prop: ClaimCardTypes) => {
             {prop.status}
           </span>
         </div>
-        <Button text="Browse" className="create-new-claim cancel" />
+        <Button text="Browse" className="create-new-claim cancel" onClick={() => console.log("a")} />
       </div>
     </div>
   );

@@ -3,6 +3,9 @@ interface ButtonProps {
   className: string;
   icon?: string;
   color?: string;
+  onClick?:
+    | ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void)
+    | undefined;
 }
 
 export const Button = (prop: ButtonProps) => {

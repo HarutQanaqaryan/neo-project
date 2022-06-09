@@ -14,7 +14,6 @@
     font-size: 12px;
   }
 }
-
 .text-field_input,
 .incoming-claim-field,
 .select {
@@ -22,9 +21,10 @@
   background: #f0f0f0;
   border-radius: $baseBorderRadius;
   max-width: 100%;
+  min-width: 300px;
   display: flex;
   padding: 0px 16px 0px 16px;
-  margin-top: 8px;
+  margin-top: 10px;
   &:focus-within {
     background: #c2c2c2;
   }
@@ -44,6 +44,7 @@
   }
   @media screen and(max-width: 800px) {
     height: 48px;
+    width: 100%;
   }
 }
 .login-authorization_input {
@@ -51,6 +52,9 @@
   @media screen and (max-width: 800px) {
     max-width: 350px;
   }
+}
+.error {
+  border: 2px solid #cc1f1f;
 }
 .header-search_input {
   width: 35%;
@@ -80,7 +84,7 @@
 }
 .select-wrapper {
   max-width: 550px;
-  position: relative
+  position: relative;
 }
 .select {
   cursor: pointer;
@@ -100,7 +104,7 @@
   z-index: 999;
   width: 550px;
   @media screen and (max-width: 800px) {
-    width: 100%
+    width: 100%;
   }
 }
 .select-option {
@@ -131,4 +135,14 @@
   @media screen and(max-width: 800px) {
     width: 25px;
   }
+}
+
+.text-field-error_message {
+  color: #cc1f1f;
+  font-family: $baseFont;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  margin: 4px;
+  margin-bottom: 5px;
 }

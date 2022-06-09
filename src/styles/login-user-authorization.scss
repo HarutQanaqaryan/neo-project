@@ -27,6 +27,9 @@
 .login-user-authorization_form {
   width: 50vh;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .login-user_request-register {
   font-family: $baseFont;

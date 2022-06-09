@@ -10,10 +10,19 @@ interface HeaderComponentProps {
   name: string;
 }
 export const Header = (prop: HeaderComponentProps) => {
-  const url = useLocation()
+  const url = useLocation();
   return (
     <div className="header">
-      {url.pathname === "/home" && <TextField placeholder="Search" icon={searchIcon} uniqueStyle="header-search_input"/>}
+      {/* {url.pathname === "/home" && (
+        <TextField
+          name="search"
+          placeholder="Search"
+          icon={searchIcon}
+          uniqueStyle="header-search_input"
+          value=""
+          onChange={() => console.log("a")}
+        />
+      )} */}
       <div className="menu-user-info">
         <img
           src={notificationIcon}

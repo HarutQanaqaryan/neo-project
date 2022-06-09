@@ -12,6 +12,7 @@ export const YourClaimsTitle = () => {
         text="Create claim"
         className="claims-head_btn"
         icon={buttonIcon}
+        onClick={() => console.log("a")}
       />
     </div>
   );

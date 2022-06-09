@@ -12,9 +12,12 @@ export const CreateNewClaim = () => {
       <ClaimsTitle title="Creating new claim" />
       <div className="create-new-claim-inputs">
         <TextField
+          name="Title"
           placeholder="Type claim title"
           label="TITLE"
           uniqueStyle="create-new-claim-input"
+          value=""
+          onChange={() => console.log("a")}
         />
         <Select
           placeholder="Select type"
@@ -24,12 +27,15 @@ export const CreateNewClaim = () => {
           options={claimTypes}
         />
         <TextField
+          name="Desc"
           placeholder="Type claim description"
           label="DESCRIPTION"
           uniqueStyle="create-new-claim-input"
+          value=""
+          onChange={() => console.log("a")}
         />
-        <Button text="Close" className="create-new-claim cancel"/>
-        <Button text="Create" className="create-new-claim create"/>
+        <Button text="Close" className="create-new-claim cancel" onClick={() => console.log("a")}/>
+        <Button text="Create" className="create-new-claim create" onClick={() => console.log("a")} />
       </div>
     </div>
   );
