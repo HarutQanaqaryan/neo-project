@@ -1,5 +1,6 @@
 import { checkClaimStatusColor } from "../../helpers/checkClaimStatusColor";
 import { checkClaimTypeColor } from "../../helpers/checkClaimTypeColor";
+import { isAdmin } from "../../helpers/contstants";
 import "../../styles/table-body.scss";
 interface TableBodyItemType {
   claims: Array<any>;
@@ -26,7 +27,7 @@ export const TableBody = (prop: TableBodyItemType) => {
               {status ? status.name : ""}
             </span>
           </td>
-          <td className="claim-actions">BUUUUUGGGG</td>
+          {isAdmin && <td className="claim-actions">Browse</td>}
         </tr>
       ))}
     </tbody>

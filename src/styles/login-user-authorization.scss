@@ -7,7 +7,7 @@
 }
 .login-user-authorization_block {
   display: flex;
-  width: 50%;
+  width: 50vw;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
@@ -26,10 +26,8 @@
 }
 .login-user-authorization_form {
   width: 50vh;
-  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 .login-user_request-register {
   font-family: $baseFont;
@@ -39,6 +37,7 @@
   line-height: 17px;
   color: #2d3436;
   margin-top: 16px;
+  text-align: center;
   @media screen and (max-width: 800px) {
     font-size: 12px;
     width: 100vw;

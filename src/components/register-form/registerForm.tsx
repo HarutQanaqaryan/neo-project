@@ -80,7 +80,7 @@ export const RegisterForm = () => {
             </NavLink>
           </span>
         )}
-        {error && <span className="text-field-error_message">Ops... we have a problem :( <br /> Try again</span>}
+        {error && <span className="text-field-error_message">This user already exists</span>}
         <Button
           text="Register"
           className="login-user_btn"

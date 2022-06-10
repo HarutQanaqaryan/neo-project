@@ -1,5 +1,8 @@
 export const checkClaimStatusColor = (status: string) => {
   switch (status) {
+    case "Declined": {
+      return "#E84393";
+    }
     case "New": {
       return "#6C5CE7";
     }
@@ -10,7 +13,7 @@ export const checkClaimStatusColor = (status: string) => {
       return "#00B894";
     }
     default: {
-      return "#E84393";
+      return "#dae7e0";
     }
   }
 };

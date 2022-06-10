@@ -9,12 +9,14 @@ import {
 import thunk, { ThunkAction, ThunkDispatch } from "redux-thunk";
 import { claimsReducer } from "./reducers/claimsReducer";
 import { loginReducer } from "./reducers/loginReducer";
+import { newClaimReducer } from "./reducers/newClaimReducer";
 import { registerReducer } from "./reducers/registerReducer";
 
 const rootReducer = combineReducers({
   login: loginReducer,
   register: registerReducer,
-  claims: claimsReducer
+  claims: claimsReducer,
+  newClaim: newClaimReducer
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunk));

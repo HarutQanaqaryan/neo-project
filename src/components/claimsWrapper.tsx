@@ -1,4 +1,4 @@
-import { USER } from "../helpers/contstants";
+import { USER_NAME } from "../helpers/contstants";
 import "../styles/claims-wrapper.scss";
 import { Header } from "./header";
 import { Menu } from "./menu";
@@ -9,17 +9,13 @@ interface ClaimWrapperType {
 }
 
 export const ClaimsWrapper = (prop: ClaimWrapperType) => {
-  let userName = ""
 
-  if(typeof USER === "string"){
-    userName = JSON.parse(USER).fullName
-  }
 
   return (
     <div className="claims-main-wrapper">
       <Menu />
       <div className="claims-wrapper">
-        <Header name={userName} />
+        <Header name={USER_NAME} />
         {prop.children}
       </div>
     </div>

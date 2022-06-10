@@ -95,6 +95,9 @@
 .select-icon {
   width: 12px;
 }
+.error {
+  border: 1px solid red;
+}
 .select-options {
   padding: 0px;
   background: #f0f0f0;
@@ -145,4 +148,6 @@
   line-height: 32px;
   margin: 4px;
   margin-bottom: 5px;
+  z-index: 15;
+  position: absolute;
 }

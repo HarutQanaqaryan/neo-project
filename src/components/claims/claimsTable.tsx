@@ -5,7 +5,7 @@ import { YourClaimsTitle } from "./yourClaimsTitle";
 import { useState } from "react";
 import { Pagination } from "../pagination/pagination";
 import loadingIcon from "../../assets/icons/loading.svg";
-import errorIcon from "../../assets/icons/error.svg"
+import errorIcon from "../../assets/icons/error.svg";
 
 interface ClaimsTableType {
   claims: Array<any>;
@@ -43,11 +43,13 @@ export const ClaimsTable = (prop: ClaimsTableType) => {
           <img src={loadingIcon} alt="Loading" />
         </div>
       )}
-      {prop.error && <div className="claims-block_error">
+      {prop.error && (
+        <div className="claims-block_error">
           <img src={errorIcon} alt="Loading" />
           <span>Error!</span>
-        </div>}
-      {prop.claims.length !== 0 && (
+        </div>
+      )}
+      {prop.claims.length > 10 && (
         <Pagination
           claimPerPage={claimsPerPage}
           totalClaims={prop.claims.length}

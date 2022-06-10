@@ -55,7 +55,8 @@ export const LoginForm = () => {
           uniqueStyle="login-authorization_input"
           pattern={{
             value: passwordPattern,
-            message: "The password must be 6-18 characters long and only Latin letters",
+            message:
+              "The password must be 6-18 characters long and only Latin letters",
           }}
           error={methods.formState.errors.password}
           type="password"
@@ -68,16 +69,16 @@ export const LoginForm = () => {
         />
         {error && <span className="text-field-error_message">{error}</span>}
         <Button text="Login" className={"login-user_btn"} />
+        <p className="login-user_request-register">
+          Not a member?{" "}
+          <NavLink
+            className="login-user_request-register_link"
+            to="/registration"
+          >
+            Request registration
+          </NavLink>
+        </p>
       </form>
-      <p className="login-user_request-register">
-        Not a member?{" "}
-        <NavLink
-          className="login-user_request-register_link"
-          to="/registration"
-        >
-          Request registration
-        </NavLink>
-      </p>
     </FormProvider>
   );
 };

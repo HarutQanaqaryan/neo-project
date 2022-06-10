@@ -10,7 +10,7 @@ interface ButtonProps {
 
 export const Button = (prop: ButtonProps) => {
   return (
-    <button className={prop.className} style={{ background: prop.color }}>
+    <button className={prop.className} style={{ background: prop.color }} onClick={prop.onClick}>
       {prop.icon && <img src={prop.icon} alt="Button icons" />}
       {prop.text}
     </button>

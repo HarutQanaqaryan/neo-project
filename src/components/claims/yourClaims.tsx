@@ -12,11 +12,9 @@ export const YourClaims = () => {
    dispatch(getClaims())
   }, [dispatch])
 
-  console.log(loading)
-  
   return (
       <div className="your-claims">
-        {data.length !== 0 && <ClaimsTable claims={data} loading={loading} error={error} />}
+        <ClaimsTable claims={data} loading={loading} error={error} />
       </div>
   );
 };

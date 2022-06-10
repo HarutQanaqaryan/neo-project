@@ -1,1 +1,1 @@
-export const claimTypes = ["Software", "Troubleshooting", "Networking", "Hardwere"]
+export const claimTypes = ["Software", "Troubleshooting", "Networking", "Hardware"]
