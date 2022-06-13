@@ -15,7 +15,8 @@ export const NEW_CLAIM_ERROR = "NEW_CLAIM_ERROR";
 export const SET_DATA = "SET_DATA";
 export const UPDATE_TITLE = "UPDATE_TITLE";
 export const UPDATE_DESC = "UPDATE_DESC";
-export const UPDATE_TYPE = "UPDATE_TYPE"
+export const UPDATE_TYPE = "UPDATE_TYPE";
+export const UPDATE_STATUS = "UPDATE_STATUS"
 
 // -------- Login - Registration Types
 interface SignOutAction {
@@ -152,4 +153,8 @@ interface UpdateTypeAction {
   type: typeof UPDATE_TYPE;
   claimType: string
 }
-export type ClaimsValueActions = SetDataAction | UpdateTitleAction | UpdateTitleAction | UpdateDescriptionAction | UpdateTypeAction
+interface UpdateStatusAction {
+  type: typeof UPDATE_STATUS;
+  status: string
+}
+export type ClaimsValueActions = SetDataAction | UpdateTitleAction | UpdateTitleAction | UpdateDescriptionAction | UpdateTypeAction | UpdateStatusAction

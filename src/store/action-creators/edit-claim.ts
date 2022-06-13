@@ -8,7 +8,8 @@ import { NEW_CLAIM_SUCCES, NEW_CLAIM_ERROR, NewClaimData } from "../types";
 export const editClaim = (
   data: NewClaimData,
   selectedValue: string,
-  id: string
+  id: string,
+  status: string
 ): TypedThunk => {
   return async (dispatch: TypedDispatch) => {
     try {
@@ -18,7 +19,7 @@ export const editClaim = (
           title: data.title,
           description: data.description,
           type: getClaimTypes(selectedValue),
-          status: id,
+          status: status,
         },
         requestHeader()
       );

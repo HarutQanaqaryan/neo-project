@@ -46,6 +46,7 @@ export const LoginForm = () => {
             message: "Mail should look like this: johnsmith@gmail.com",
           }}
           error={methods.formState.errors.login}
+          required={"Require field"}
         />
         <TextField
           name={"password"}
@@ -60,6 +61,7 @@ export const LoginForm = () => {
           }}
           error={methods.formState.errors.password}
           type="password"
+          required={"Require field"}
         />
         <CheckBox
           label="Keep me logged in"

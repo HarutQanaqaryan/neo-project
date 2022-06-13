@@ -36,6 +36,7 @@ export const RegisterForm = () => {
             message: "Only latin letters",
           }}
           error={methods.formState.errors.firstName}
+          required={"Require field"}
         />
         <TextField
           name={"lastName"}
@@ -47,6 +48,7 @@ export const RegisterForm = () => {
             message: "Only latin letters",
           }}
           error={methods.formState.errors.lastName}
+          required={"Require field"}
         />
         <TextField
           name={"email"}
@@ -58,6 +60,7 @@ export const RegisterForm = () => {
             message: "Mail should look like this: johnsmith@gmail.com",
           }}
           error={methods.formState.errors.email}
+          required={"Require field"}
         />
         <TextField
           name={"password"}
@@ -71,6 +74,7 @@ export const RegisterForm = () => {
           }}
           error={methods.formState.errors.password}
           type="password"
+          required={"Require field"}
         />
         {success && (
           <span className="user-registered">

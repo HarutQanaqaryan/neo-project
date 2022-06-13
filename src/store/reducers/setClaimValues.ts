@@ -3,6 +3,7 @@ import {
   SetClaimsValuesState,
   SET_DATA,
   UPDATE_DESC,
+  UPDATE_STATUS,
   UPDATE_TITLE,
   UPDATE_TYPE,
 } from "../types";
@@ -42,6 +43,10 @@ export const setClaimValuesReducer = (
       return {
         ...state,
         claimType: action.claimType,
+      };
+      case UPDATE_STATUS: return {
+        ...state,
+        status: action.status,
       };
     default:
       return state;

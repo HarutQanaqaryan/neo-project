@@ -22,10 +22,14 @@ export const loginUser = (data: SignInData): TypedThunk => {
           role: response.data.role.slug,
         })
       );
-    } catch (e) {
+    } catch ({ response: { status } }) {
+      const notRegistered =
+        status === 401 &&
+        "User not registered or incorrectly entered email/password";
+      const serverError = status === 0 && "Server side error";
       dispatch({
         type: LOGIN_ERROR,
-        payload: "User not registered or incorrectly entered email/password",
+        payload: notRegistered || serverError,
       });
     }
   };

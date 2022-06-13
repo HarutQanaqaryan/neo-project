@@ -10,10 +10,13 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useTypedDispatch, useTypedSelector } from "../store";
 import { newClaim } from "../store/action-creators/new-claim";
 import { useCallback, useEffect, useState } from "react";
-import { newClaimTextPattern } from "../helpers/contstants";
+import {
+  newClaimTextPattern,
+} from "../helpers/contstants";
 import {
   NEW_CLAIM_SUCCES,
   UPDATE_DESC,
+  UPDATE_STATUS,
   UPDATE_TITLE,
   UPDATE_TYPE,
 } from "../store/types";
@@ -22,13 +25,14 @@ import { convertClaimTypes, getClaimTypes } from "../helpers/getClaimTypes";
 import { editClaim } from "../store/action-creators/edit-claim";
 
 export const CreateEditClaim = () => {
-  const { title, description, type, id } = useTypedSelector(
+  const { title, description, type, status, id } = useTypedSelector(
     (state) => state.setClaimValues
   );
-  const [selectedValue, setSelectedValue] = useState(type ? convertClaimTypes(type) : "");
+  const [selectedValue, setSelectedValue] = useState(
+    type ? convertClaimTypes(type) : ""
+  );
   const [isSelectError, setIsSelectError] = useState(false);
   const { success, error } = useTypedSelector((state) => state.newClaim);
-
   const isIncomingPage = useLocation().pathname === "/home/incoming-claim";
 
   const USER = localStorage.getItem("User");
@@ -48,9 +52,9 @@ export const CreateEditClaim = () => {
     if (checkSelectError(selectedValue)) {
       !isIncomingPage
         ? dispatch(newClaim(data, selectedValue))
-        : dispatch(editClaim(data, selectedValue, id));
+        : dispatch(editClaim(data, selectedValue, id, status));
       setIsSelectError(false);
-      // methods.reset();
+      methods.reset();
     } else {
       setIsSelectError(true);
     }
@@ -75,6 +79,14 @@ export const CreateEditClaim = () => {
     });
   };
 
+  const handleStatus = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    if (!(e.target instanceof HTMLElement)) return;
+    dispatch({
+      type: UPDATE_STATUS,
+      status: (e.target as HTMLElement).innerText.toLowerCase().substring(0, 4),
+    });
+  };
+
   useEffect(() => checkSucces, [checkSucces]);
 
   return (
@@ -96,6 +108,7 @@ export const CreateEditClaim = () => {
             }}
             error={methods.formState.errors.title}
             onChange={handleTitle}
+            required={"Require field"}
           />
           <Select
             placeholder={
@@ -114,12 +127,8 @@ export const CreateEditClaim = () => {
             label="DESCRIPTION"
             uniqueStyle="create-new-claim-input"
             defaultValue={isIncomingPage ? description : ""}
-            pattern={{
-              value: newClaimTextPattern,
-              message: "Only latin letters",
-            }}
-            error={methods.formState.errors.description}
             onChange={handleDesc}
+            required={false}
           />
           {error && <span className="success-error">Bad request !</span>}
           <Button
@@ -140,8 +149,16 @@ export const CreateEditClaim = () => {
 
           {isAdmin && isIncomingPage && (
             <>
-              <Button text="Done" className="create-new-claim create" />
-              <Button text="Decline" className="create-new-claim decline" />
+              <Button
+                text="Done"
+                className="create-new-claim create"
+                onClick={handleStatus}
+              />
+              <Button
+                text="Decline"
+                className="create-new-claim decline"
+                onClick={handleStatus}
+              />
             </>
           )}
         </div>
