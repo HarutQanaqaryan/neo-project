@@ -1,11 +1,10 @@
 import { useLocation } from "react-router-dom";
 import { YourClaims } from "../components/claims/yourClaims";
 import { ClaimsWrapper } from "../components/claimsWrapper";
-import { CreateNewClaim } from "../components/createNewClaim";
+import { CreateEditClaim } from "../components/createEditNewClaim";
 import { MobileWrapper } from "../components/mobile/mobileWrapperMobile";
 import { YourClaimsMobile } from "../components/mobile/yourClaimsMobile";
 import { checkScreen } from "../helpers/checkMobile";
-import { IncomingClaims } from "./incoming-claims";
 import { mockData } from "../helpers/mockData";
 
 export const MainWrapper = () => {
@@ -17,10 +16,10 @@ export const MainWrapper = () => {
         return <YourClaims />;
       }
       case "/home/create-claim": {
-        return <CreateNewClaim />;
+        return <CreateEditClaim />;
       }
       case "/home/incoming-claim": {
-        return <IncomingClaims />;
+        return <CreateEditClaim />;
       }
       default:
         return <YourClaims />;
@@ -33,10 +32,10 @@ export const MainWrapper = () => {
         return <YourClaimsMobile claims={mockData}/>;
       }
       case "/home/create-claim": {
-        return <CreateNewClaim />;
+        return <CreateEditClaim/>;
       }
       case "/home/incoming-claim": {
-        return <IncomingClaims />;
+        return <CreateEditClaim />;
       }
       default:
         return <YourClaims />;

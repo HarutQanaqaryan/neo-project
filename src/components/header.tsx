@@ -5,12 +5,18 @@ import "../styles/header.scss";
 import userIcon from "../assets/user.png";
 import logOutIcon from "../assets/icons/icon-log-out.svg";
 import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 
-interface HeaderComponentProps {
-  name: string;
-}
-export const Header = (prop: HeaderComponentProps) => {
+export const Header = () => {
+  const [fullName, setFullName] = useState("");
+  const USER = localStorage.getItem("User");
+
+  useEffect(() => {
+    typeof USER === "string" && setFullName(JSON.parse(USER).fullName);
+  }, [USER, fullName]);
+
   const url = useLocation();
+
   return (
     <div className="header">
       {/* {url.pathname === "/home" && (
@@ -30,7 +36,7 @@ export const Header = (prop: HeaderComponentProps) => {
           className="menu-notification-icon"
         />
         <img src={userIcon} alt="User Icon" className="header-user-icon" />
-        <span className="menu-user-name">{prop.name}</span>
+        <span className="menu-user-name">{fullName}</span>
         <img src={logOutIcon} alt="Log out icon" className="menu-log-out" />
       </div>
     </div>

@@ -1,7 +1,7 @@
 import userIcon from "../../assets/user.png";
-import notificationIcon from "../../assets/icons/notification.svg";
 import burgerIcon from "../../assets/icons/burger-icon.svg";
 import "../../styles/mobile-header.scss"
+import mobileNotificationIcon from "../../assets/icons/notification-icon.svg"
 
 interface HeaderMobileType {
     onClick: () => void;
@@ -12,7 +12,7 @@ export const HeaderMobile = (prop: HeaderMobileType) => {
       <img src={burgerIcon} alt="Menu" className="header-mobile-burger" onClick={prop.onClick}/>
       <div>
         <img
-          src={notificationIcon}
+          src={mobileNotificationIcon}
           alt="Notification"
           className="header-mobile-notification"
         />

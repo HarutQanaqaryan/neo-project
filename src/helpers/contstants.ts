@@ -14,8 +14,5 @@ export const USER = localStorage.getItem("User");
 
 export const ADMIN = typeof USER === "string" && JSON.parse(USER).role;
 
-export const USER_ID = typeof USER === "string"  && JSON.parse(USER).id
-
-export const USER_NAME = typeof USER === "string" && JSON.parse(USER).fullName
-
 export const isAdmin = ADMIN === "admin"
+

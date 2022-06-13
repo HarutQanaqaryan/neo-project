@@ -11,12 +11,14 @@ import { claimsReducer } from "./reducers/claimsReducer";
 import { loginReducer } from "./reducers/loginReducer";
 import { newClaimReducer } from "./reducers/newClaimReducer";
 import { registerReducer } from "./reducers/registerReducer";
+import { setClaimValuesReducer } from "./reducers/setClaimValues";
 
 const rootReducer = combineReducers({
   login: loginReducer,
   register: registerReducer,
   claims: claimsReducer,
-  newClaim: newClaimReducer
+  newClaim: newClaimReducer,
+  setClaimValues: setClaimValuesReducer
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunk));

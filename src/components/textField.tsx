@@ -1,4 +1,3 @@
-import { ChangeEventHandler } from "react";
 import { useFormContext } from "react-hook-form";
 import "../styles/text-field-select.scss";
 
@@ -9,10 +8,11 @@ interface TextFieldProps {
   uniqueStyle?: string;
   value?: string;
   name: string;
-  onChange?: ChangeEventHandler;
+  onChange?: any;
   error?: any;
   type?: string;
-  pattern?: any
+  pattern?: any;
+  defaultValue?: string
 }
 
 export const TextField = (prop: TextFieldProps) => {
@@ -25,11 +25,13 @@ export const TextField = (prop: TextFieldProps) => {
         <input
           placeholder={prop.placeholder}
           value={prop.value}
+          defaultValue={prop.defaultValue}
           type={prop.type}
           {...register.register(prop.name, {
             required: "Require field",
             pattern: prop.pattern
           })}
+          onChange={prop.onChange}
         />
         {prop.icon && (
           <img src={prop.icon} alt="icon" className="text-field-icon" />

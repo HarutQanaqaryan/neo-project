@@ -5,23 +5,23 @@ import { getClaimTypes } from "../../helpers/getClaimTypes";
 import { requestHeader } from "../../helpers/requestHeader";
 import { NEW_CLAIM_SUCCES, NEW_CLAIM_ERROR, NewClaimData } from "../types";
 
-export const newClaim = (
+export const editClaim = (
   data: NewClaimData,
-  selectedValue: string
+  selectedValue: string,
+  id: string
 ): TypedThunk => {
   return async (dispatch: TypedDispatch) => {
     try {
-      await axios.post(
-        `${BASE_URL}/claim`,
+      await axios.put(
+        `${BASE_URL}/claim/${id}`,
         {
           title: data.title,
           description: data.description,
           type: getClaimTypes(selectedValue),
-          status: "new",
+          status: id,
         },
         requestHeader()
       );
-
       dispatch({ type: NEW_CLAIM_SUCCES, payload: true });
     } catch (e) {
       dispatch({ type: NEW_CLAIM_ERROR, payload: true });

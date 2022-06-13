@@ -19,6 +19,10 @@
     line-height: 20px;
     color: #2d3436;
   }
+  .title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 .claim-type {
   width: 16px;
@@ -36,6 +40,7 @@
   line-height: 20px;
   text-decoration-line: underline;
   color: #148bff;
+  cursor: pointer;
 }
 .claim-status {
   width: 124px;

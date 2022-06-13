@@ -1,4 +1,3 @@
-import { USER_NAME } from "../helpers/contstants";
 import "../styles/claims-wrapper.scss";
 import { Header } from "./header";
 import { Menu } from "./menu";
@@ -15,7 +14,7 @@ export const ClaimsWrapper = (prop: ClaimWrapperType) => {
     <div className="claims-main-wrapper">
       <Menu />
       <div className="claims-wrapper">
-        <Header name={USER_NAME} />
+        <Header />
         {prop.children}
       </div>
     </div>

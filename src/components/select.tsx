@@ -9,7 +9,7 @@ interface SelectProps {
   uniqueStyle?: string;
   options: Array<any>;
   setSelectValue?: any;
-  error?: boolean
+  error?: boolean;
 }
 
 export const Select = (prop: SelectProps) => {

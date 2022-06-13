@@ -140,7 +140,7 @@
   }
 }
 
-.text-field-error_message {
+.text-field-error_message, .success-error {
   color: #cc1f1f;
   font-family: $baseFont;
   font-size: 16px;
@@ -150,4 +150,7 @@
   margin-bottom: 5px;
   z-index: 15;
   position: absolute;
+}
+.success-error {
+  margin-top: -40px;
 }

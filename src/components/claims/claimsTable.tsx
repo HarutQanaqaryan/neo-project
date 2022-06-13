@@ -11,6 +11,7 @@ interface ClaimsTableType {
   claims: Array<any>;
   loading: boolean;
   error: boolean;
+  
 }
 export const ClaimsTable = (prop: ClaimsTableType) => {
   const [claimsPerPage] = useState(10);

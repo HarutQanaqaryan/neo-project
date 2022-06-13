@@ -12,6 +12,11 @@ export const GET_CLAIMS_LOADING = "GET_CLAIMS_LOADING";
 export const NEW_CLAIM_SUCCES = "NEW_CLAIM_SUCCES";
 export const NEW_CLAIM_ERROR = "NEW_CLAIM_ERROR";
 
+export const SET_DATA = "SET_DATA";
+export const UPDATE_TITLE = "UPDATE_TITLE";
+export const UPDATE_DESC = "UPDATE_DESC";
+export const UPDATE_TYPE = "UPDATE_TYPE"
+
 // -------- Login - Registration Types
 interface SignOutAction {
   type: typeof SIGN_OUT;
@@ -94,25 +99,57 @@ export type GetClaimsAction =
 
 // -------- New Claim Types
 
-export interface NewClaimState  {
+export interface NewClaimState {
   success: boolean;
-  error: boolean
+  error: boolean;
 }
-export interface NewClaimSuccesAction {
+interface NewClaimSuccesAction {
   type: typeof NEW_CLAIM_SUCCES;
   payload: boolean;
 }
 
-export interface NewClaimErrorAction {
+interface NewClaimErrorAction {
   type: typeof NEW_CLAIM_ERROR;
   payload: boolean;
 }
 
 export interface NewClaimData {
-   title: string;
-   description: string;
-   type: string;
-   status: string;
+  title: string;
+  description: string;
+  type: string;
+  status: string;
+  id?: string;
 }
 
-export type NewClaimAction = NewClaimSuccesAction | NewClaimErrorAction
+export type NewClaimAction = NewClaimSuccesAction | NewClaimErrorAction;
+
+export interface SetClaimsValuesState {
+  title: string;
+  description: string;
+  type: string;
+  id: string;
+  status: string;
+}
+
+interface SetDataAction {
+  type: typeof SET_DATA;
+  title: string,
+  description: string,
+  claimType: string,
+  id: string,
+  status: string
+}
+
+interface UpdateTitleAction {
+  type: typeof UPDATE_TITLE;
+  title: string;
+}
+interface UpdateDescriptionAction {
+  type: typeof UPDATE_DESC;
+  description: string
+}
+interface UpdateTypeAction {
+  type: typeof UPDATE_TYPE;
+  claimType: string
+}
+export type ClaimsValueActions = SetDataAction | UpdateTitleAction | UpdateTitleAction | UpdateDescriptionAction | UpdateTypeAction
