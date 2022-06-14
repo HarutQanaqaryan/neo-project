@@ -1,4 +1,4 @@
-export const SIGN_OUT = "SIGN_OUT";
+export const LOG_OUT = "SIGN_OUT";
 export const LOGIN_ERROR = "LOGIN_ERROR";
 export const LOGIN_SUCCESS = "SET_SUCCESS";
 export const SET_USER = "SET_USER";
@@ -20,7 +20,7 @@ export const UPDATE_STATUS = "UPDATE_STATUS";
 // -------- Login - Registration Types
 
 interface SignOutAction {
-  type: typeof SIGN_OUT;
+  type: typeof LOG_OUT;
 }
 
 interface SetErrorAction {

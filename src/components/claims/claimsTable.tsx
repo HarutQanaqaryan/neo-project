@@ -40,7 +40,7 @@ export const ClaimsTable = (prop: ClaimsTableType) => {
         <TableHeader />
         <TableBody claims={currentClaims} />
       </table>
-      {prop.claims.length === 0 && !prop.loading && (
+      {prop.claims.length === 0 && !prop.loading && !prop.error && (
         <div className="claims-block-no-claims">No claims!</div>
       )}
       {prop.loading && (

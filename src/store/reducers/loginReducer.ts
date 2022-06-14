@@ -1,6 +1,6 @@
 import {
   AuthAction,
-  SIGN_OUT,
+  LOG_OUT,
   LOGIN_ERROR,
   LOGIN_SUCCESS,
   AuthState,
@@ -13,7 +13,7 @@ const initialState: AuthState = {
 
 export const loginReducer = (state = initialState, action: AuthAction) => {
   switch (action.type) {
-    case SIGN_OUT:
+    case LOG_OUT:
       return {
         error: "",
         success: false,
