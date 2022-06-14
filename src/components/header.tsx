@@ -5,7 +5,7 @@ import logOutIcon from "../assets/icons/icon-log-out.svg";
 import { useLocation } from "react-router-dom";
 import { useTypedDispatch, useTypedSelector } from "../store";
 import { SearchTextField } from "./searchTexField";
-import { SEARCH_VALUE } from "../store/reducers/searchValue";
+import { SEARCH_VALUE } from "../store/reducers/filterValues";
 
 export const Header = () => {
   const dispatch = useTypedDispatch()
@@ -14,7 +14,7 @@ export const Header = () => {
   const url = useLocation();
 
   const handleSearchValue = (e: React.ChangeEvent<HTMLInputElement>) => {
-     dispatch({type: SEARCH_VALUE, value: e.target.value})
+     dispatch({type: SEARCH_VALUE, searchValue: e.target.value})
   };
 
   return (

@@ -7,27 +7,27 @@ import { getClaims } from "../../store/action-creators/claims";
 export const YourClaims = () => {
   const { data, loading, error } = useTypedSelector((state) => state.claims);
   const [reserveData, setReserveData] = useState(data);
-  const { value } = useTypedSelector((state) => state.searchValue);
+  const { searchValue } = useTypedSelector((state) => state.filterValues);
   const dispatch = useTypedDispatch();
 
   useEffect(() => {
-    value === "" && setReserveData(data);
-  }, [data, value]);
+    searchValue === "" && setReserveData(data);
+  }, [data, searchValue]);
 
   useEffect(() => {
     dispatch(getClaims());
   }, [dispatch]);
 
   useEffect(() => {
-    if (value !== "") {
+    if (searchValue !== "") {
       setReserveData(
         (state) =>
           (state = data.filter(({ title }) =>
-            title.toLowerCase().includes(value.toLowerCase())
+            title.toLowerCase().includes(searchValue.toLowerCase())
           ))
       );
     }
-  }, [data, dispatch, value]);
+  }, [data, dispatch, searchValue]);
 
   return (
     <div className="your-claims">
