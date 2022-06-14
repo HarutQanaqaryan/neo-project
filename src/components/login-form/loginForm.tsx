@@ -69,7 +69,7 @@ export const LoginForm = () => {
           name="checkbox"
           onChange={checkedKeepMeLoggedIn}
         />
-        {error && <span className="text-field-error_message">{error}</span>}
+        {error && <span className="success-error">{error}</span>}
         <Button text="Login" className={"login-user_btn"} />
         <p className="login-user_request-register">
           Not a member?{" "}
