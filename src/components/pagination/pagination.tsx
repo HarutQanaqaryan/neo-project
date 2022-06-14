@@ -35,6 +35,10 @@ export const Pagination = (prop: PageType) => {
   }, [pageNums.length, prop.currentPage, pageNums, firstElem, lastElem]);
 
   useEffect(() => {
+    setPageNums(paginationsNumberCells(prop.totalClaims, prop.claimPerPage));
+  }, [prop.claimPerPage, prop.totalClaims]);
+
+  useEffect(() => {
     setPageNums(
       pageNums.map((el: any) =>
         el.num === prop.currentPage

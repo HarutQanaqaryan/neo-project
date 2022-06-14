@@ -1,34 +1,32 @@
-import { TextField } from "./textField";
-import searchIcon from "../assets/icons/search.svg";
 import notificationIcon from "../assets/icons/notification.svg";
 import "../styles/header.scss";
 import userIcon from "../assets/user.png";
 import logOutIcon from "../assets/icons/icon-log-out.svg";
 import { useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useTypedDispatch, useTypedSelector } from "../store";
+import { SearchTextField } from "./searchTexField";
+import { SEARCH_VALUE } from "../store/reducers/searchValue";
 
 export const Header = () => {
-  const [fullName, setFullName] = useState("");
-  const USER = localStorage.getItem("User");
-
-  useEffect(() => {
-    typeof USER === "string" && setFullName(JSON.parse(USER).fullName);
-  }, [USER, fullName]);
+  const dispatch = useTypedDispatch()
+  const { fullName } = useTypedSelector((state) => state.user);
 
   const url = useLocation();
 
+  const handleSearchValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+     dispatch({type: SEARCH_VALUE, value: e.target.value})
+  };
+
   return (
     <div className="header">
-      {/* {url.pathname === "/home" && (
-        <TextField
-          name="search"
+      {url.pathname === "/home" && (
+        <SearchTextField
           placeholder="Search"
-          icon={searchIcon}
-          uniqueStyle="header-search_input"
-          value=""
-          onChange={() => console.log("a")}
+          type="search"
+          uniqueStyle="search"
+          onChange={handleSearchValue}
         />
-      )} */}
+      )}
       <div className="menu-user-info">
         <img
           src={notificationIcon}

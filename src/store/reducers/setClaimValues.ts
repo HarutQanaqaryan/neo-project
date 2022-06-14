@@ -2,10 +2,7 @@ import {
   ClaimsValueActions,
   SetClaimsValuesState,
   SET_DATA,
-  UPDATE_DESC,
   UPDATE_STATUS,
-  UPDATE_TITLE,
-  UPDATE_TYPE,
 } from "../types";
 
 const initialState: SetClaimsValuesState = {
@@ -28,21 +25,6 @@ export const setClaimValuesReducer = (
         type: action.claimType,
         id: action.id,
         status: action.status,
-      };
-    case UPDATE_TITLE:
-      return {
-        ...state,
-        title: action.title,
-      };
-      case UPDATE_DESC:
-      return {
-        ...state,
-        description: action.description,
-      };
-      case UPDATE_TYPE:
-      return {
-        ...state,
-        claimType: action.claimType,
       };
       case UPDATE_STATUS: return {
         ...state,

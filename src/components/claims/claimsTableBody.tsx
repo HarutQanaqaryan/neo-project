@@ -1,13 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import { checkClaimStatusColor } from "../../helpers/checkClaimStatusColor";
 import { checkClaimTypeColor } from "../../helpers/checkClaimTypeColor";
-import { useTypedDispatch } from "../../store";
+import { useTypedDispatch, useTypedSelector } from "../../store";
 import { SET_DATA } from "../../store/types";
 import "../../styles/table-body.scss";
 interface TableBodyItemType {
   claims: Array<any>;
 }
 export const TableBody = (prop: TableBodyItemType) => {
+  const { isAdmin } = useTypedSelector((state) => state.user);
   const dispatch = useTypedDispatch();
   const navigate = useNavigate();
 
@@ -53,9 +54,9 @@ export const TableBody = (prop: TableBodyItemType) => {
               {status ? status.name : ""}
             </span>
           </td>
-          <td className="claim-actions" onClick={(e) => incomingClaim(e)}>
+          {isAdmin && <td className="claim-actions" onClick={(e) => incomingClaim(e)}>
             Browse
-          </td>
+          </td>}
         </tr>
       ))}
     </tbody>

@@ -33,7 +33,7 @@ export const convertClaimTypes = (type: string) => {
       return "Networking";
     }
     default: {
-      return "Soft";
+      return "";
     }
   }
 }

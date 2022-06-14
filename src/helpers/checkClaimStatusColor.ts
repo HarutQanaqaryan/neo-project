@@ -6,7 +6,7 @@ export const checkClaimStatusColor = (status: string) => {
     case "New": {
       return "#6C5CE7";
     }
-    case "In Progress": {
+    case "In progress": {
       return "#FDCB6E";
     }
     case "Done": {

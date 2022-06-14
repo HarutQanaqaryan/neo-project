@@ -42,11 +42,18 @@
       font-size: 16px;
     }
   }
+  input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+  }
   @media screen and(max-width: 800px) {
     height: 48px;
     width: 100%;
   }
 }
+.search {
+  width: 35%;
+}
+
 .login-authorization_input {
   margin-bottom: 30px;
   @media screen and (max-width: 800px) {
@@ -140,7 +147,8 @@
   }
 }
 
-.text-field-error_message, .success-error {
+.text-field-error_message,
+.success-error {
   color: #cc1f1f;
   font-family: $baseFont;
   font-size: 16px;

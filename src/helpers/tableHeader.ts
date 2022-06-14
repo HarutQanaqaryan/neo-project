@@ -1,0 +1,1 @@
+export const tableHeaders = ["Title", "Created", "Type", "Status", "Actions"];

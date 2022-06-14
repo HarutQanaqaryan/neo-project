@@ -10,16 +10,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useTypedDispatch, useTypedSelector } from "../store";
 import { newClaim } from "../store/action-creators/new-claim";
 import { useCallback, useEffect, useState } from "react";
-import {
-  newClaimTextPattern,
-} from "../helpers/contstants";
-import {
-  NEW_CLAIM_SUCCES,
-  UPDATE_DESC,
-  UPDATE_STATUS,
-  UPDATE_TITLE,
-  UPDATE_TYPE,
-} from "../store/types";
+import { isAdmin, newClaimTextPattern } from "../helpers/contstants";
+import { NEW_CLAIM_SUCCES, UPDATE_STATUS, UPDATE_TYPE } from "../store/types";
 import { checkSelectError } from "../helpers/checkSelectError";
 import { convertClaimTypes, getClaimTypes } from "../helpers/getClaimTypes";
 import { editClaim } from "../store/action-creators/edit-claim";
@@ -28,17 +20,12 @@ export const CreateEditClaim = () => {
   const { title, description, type, status, id } = useTypedSelector(
     (state) => state.setClaimValues
   );
+  const { success, error } = useTypedSelector((state) => state.newClaim);
   const [selectedValue, setSelectedValue] = useState(
     type ? convertClaimTypes(type) : ""
   );
   const [isSelectError, setIsSelectError] = useState(false);
-  const { success, error } = useTypedSelector((state) => state.newClaim);
   const isIncomingPage = useLocation().pathname === "/home/incoming-claim";
-
-  const USER = localStorage.getItem("User");
-  const ADMIN = typeof USER === "string" && JSON.parse(USER).role;
-  const isAdmin = ADMIN === "admin";
-
   const methods = useForm();
   const navigate = useNavigate();
   const dispatch = useTypedDispatch();
@@ -56,7 +43,7 @@ export const CreateEditClaim = () => {
       setIsSelectError(false);
       methods.reset();
     } else {
-      setIsSelectError(true);
+      !isIncomingPage && setIsSelectError(true);
     }
   };
 
@@ -65,22 +52,7 @@ export const CreateEditClaim = () => {
     dispatch({ type: NEW_CLAIM_SUCCES, payload: false });
   }, [dispatch, navigate, success]);
 
-  const handleTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch({
-      type: UPDATE_TITLE,
-      title: e.target.value,
-    });
-  };
-
-  const handleDesc = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch({
-      type: UPDATE_DESC,
-      description: e.target.value,
-    });
-  };
-
   const handleStatus = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    if (!(e.target instanceof HTMLElement)) return;
     dispatch({
       type: UPDATE_STATUS,
       status: (e.target as HTMLElement).innerText.toLowerCase().substring(0, 4),
@@ -107,7 +79,7 @@ export const CreateEditClaim = () => {
               message: "Only latin letters",
             }}
             error={methods.formState.errors.title}
-            onChange={handleTitle}
+            disabled={isAdmin}
             required={"Require field"}
           />
           <Select
@@ -120,6 +92,7 @@ export const CreateEditClaim = () => {
             options={claimTypes}
             setSelectValue={getSelectValue}
             error={isSelectError}
+            disabled={isAdmin}
           />
           <TextField
             name={"description"}
@@ -127,8 +100,13 @@ export const CreateEditClaim = () => {
             label="DESCRIPTION"
             uniqueStyle="create-new-claim-input"
             defaultValue={isIncomingPage ? description : ""}
-            onChange={handleDesc}
-            required={false}
+            pattern={{
+              value: newClaimTextPattern,
+              message: "Only latin letters",
+            }}
+            error={methods.formState.errors.description}
+            disabled={isAdmin}
+            required={"Require field"}
           />
           {error && <span className="success-error">Bad request !</span>}
           <Button
@@ -136,18 +114,11 @@ export const CreateEditClaim = () => {
             className="create-new-claim cancel"
             onClick={() => navigate("../home")}
           />
-          {isAdmin && !isIncomingPage && (
+          {!isIncomingPage && (
             <Button text="Create" className="create-new-claim create" />
           )}
 
-          {!isAdmin && (
-            <Button
-              text={`${isIncomingPage ? "Save" : "Create"}`}
-              className="create-new-claim create"
-            />
-          )}
-
-          {isAdmin && isIncomingPage && (
+          {isIncomingPage && (
             <>
               <Button
                 text="Done"

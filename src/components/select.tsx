@@ -10,6 +10,7 @@ interface SelectProps {
   options: Array<any>;
   setSelectValue?: any;
   error?: boolean;
+  disabled?: boolean;
 }
 
 export const Select = (prop: SelectProps) => {
@@ -17,6 +18,7 @@ export const Select = (prop: SelectProps) => {
   const [option, setOption] = useState(prop.placeholder);
 
   const openOptions = () => {
+    !prop.disabled &&
     !isOpen ? setIsOpen(true) : setIsOpen(false);
   };
 

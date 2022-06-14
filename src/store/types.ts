@@ -2,6 +2,7 @@ export const SIGN_OUT = "SIGN_OUT";
 export const LOGIN_ERROR = "LOGIN_ERROR";
 export const LOGIN_SUCCESS = "SET_SUCCESS";
 export const SET_USER = "SET_USER";
+export const REMOVE_USER = "REMOVE_USER";
 export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
 export const REGISTER_ERROR = "REGISTER_ERROR";
 
@@ -13,12 +14,11 @@ export const NEW_CLAIM_SUCCES = "NEW_CLAIM_SUCCES";
 export const NEW_CLAIM_ERROR = "NEW_CLAIM_ERROR";
 
 export const SET_DATA = "SET_DATA";
-export const UPDATE_TITLE = "UPDATE_TITLE";
-export const UPDATE_DESC = "UPDATE_DESC";
 export const UPDATE_TYPE = "UPDATE_TYPE";
-export const UPDATE_STATUS = "UPDATE_STATUS"
+export const UPDATE_STATUS = "UPDATE_STATUS";
 
 // -------- Login - Registration Types
+
 interface SignOutAction {
   type: typeof SIGN_OUT;
 }
@@ -96,7 +96,7 @@ interface GetClaimsErrorAction {
 export type GetClaimsAction =
   | GetClaimsSuccessAction
   | GetClaimsErrorAction
-  | GetClaimsLoadingAction;
+  | GetClaimsLoadingAction
 
 // -------- New Claim Types
 
@@ -134,27 +134,41 @@ export interface SetClaimsValuesState {
 
 interface SetDataAction {
   type: typeof SET_DATA;
-  title: string,
-  description: string,
-  claimType: string,
-  id: string,
-  status: string
+  title: string;
+  description: string;
+  claimType: string;
+  id: string;
+  status: string;
 }
 
-interface UpdateTitleAction {
-  type: typeof UPDATE_TITLE;
-  title: string;
-}
-interface UpdateDescriptionAction {
-  type: typeof UPDATE_DESC;
-  description: string
-}
-interface UpdateTypeAction {
-  type: typeof UPDATE_TYPE;
-  claimType: string
-}
 interface UpdateStatusAction {
   type: typeof UPDATE_STATUS;
-  status: string
+  status: string;
 }
-export type ClaimsValueActions = SetDataAction | UpdateTitleAction | UpdateTitleAction | UpdateDescriptionAction | UpdateTypeAction | UpdateStatusAction
+export type ClaimsValueActions =
+  | SetDataAction
+  | UpdateStatusAction
+
+export interface UserInfoState {
+  email: string;
+  fullName: string;
+  id: string;
+  role: string;
+  isAdmin: boolean
+}
+
+interface SetUserInfoAction {
+  type: typeof SET_USER;
+  email: string;
+  fullName: string;
+  id: string;
+  role: string;
+  isAdmin: boolean
+}
+
+interface RemoverUserInfoAction {
+  type: typeof REMOVE_USER;
+  payload: any;
+}
+
+export type UserInfoActions = SetUserInfoAction | RemoverUserInfoAction

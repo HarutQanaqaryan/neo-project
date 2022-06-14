@@ -14,6 +14,7 @@ interface TextFieldProps {
   pattern?: any;
   defaultValue?: string;
   required: string | boolean;
+  disabled?: boolean
 }
 
 export const TextField = (prop: TextFieldProps) => {
@@ -31,6 +32,7 @@ export const TextField = (prop: TextFieldProps) => {
           {...register.register(prop.name, {
             required: prop.required,
             pattern: prop.pattern,
+            disabled: prop.disabled
           })}
           onChange={prop.onChange}
         />

@@ -2,7 +2,7 @@ import { TableBody } from "./claimsTableBody";
 import { TableHeader } from "./claimsTableHeader";
 import "../../styles/claims-table.scss";
 import { YourClaimsTitle } from "./yourClaimsTitle";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Pagination } from "../pagination/pagination";
 import loadingIcon from "../../assets/icons/loading.svg";
 import errorIcon from "../../assets/icons/error.svg";
@@ -11,15 +11,19 @@ interface ClaimsTableType {
   claims: Array<any>;
   loading: boolean;
   error: boolean;
-  
 }
 export const ClaimsTable = (prop: ClaimsTableType) => {
   const [claimsPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
-
+  const [currentClaims, setCurrentClaims] = useState(prop.claims);
   const lastPostIndex = currentPage * claimsPerPage;
   const firstPostIndex = lastPostIndex - claimsPerPage;
-  const currentClaims = prop.claims.slice(firstPostIndex, lastPostIndex);
+
+  useEffect(() => {
+    setCurrentClaims(prop.claims.slice(firstPostIndex, lastPostIndex));
+  }, [firstPostIndex, lastPostIndex, prop.claims]);
+
+  prop.claims.slice(firstPostIndex, lastPostIndex);
 
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
@@ -36,8 +40,8 @@ export const ClaimsTable = (prop: ClaimsTableType) => {
         <TableHeader />
         <TableBody claims={currentClaims} />
       </table>
-      {prop.claims.length === 0 && (
-        <div className="claims-block-no-claims">You have no claims!</div>
+      {prop.claims.length === 0 && !prop.loading && (
+        <div className="claims-block-no-claims">No claims!</div>
       )}
       {prop.loading && (
         <div className="claims-block_loading">
