@@ -5,11 +5,9 @@ import { CreateEditClaim } from "../components/createEditNewClaim";
 import { MobileWrapper } from "../components/mobile/mobileWrapperMobile";
 import { YourClaimsMobile } from "../components/mobile/yourClaimsMobile";
 import { checkScreen } from "../helpers/checkMobile";
-import { mockData } from "../helpers/mockData";
 
 export const MainWrapper = () => {
   const url = useLocation();
-
   const renderComponent = () => {
     switch (url.pathname) {
       case "/home": {
@@ -29,7 +27,7 @@ export const MainWrapper = () => {
   const renderComponentMobile = () => {
     switch (url.pathname) {
       case "/home": {
-        return <YourClaimsMobile claims={mockData}/>;
+        return <YourClaimsMobile />;
       }
       case "/home/create-claim": {
         return <CreateEditClaim/>;

@@ -1,5 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import { checkClaimStatusColor } from "../../helpers/checkClaimStatusColor";
 import { checkClaimTypeColor } from "../../helpers/checkClaimTypeColor";
+import { setIncomingClaimValues } from "../../helpers/setIncomingClaimValues";
+import { useTypedDispatch, useTypedSelector } from "../../store";
+import { SET_DATA } from "../../store/types";
 import "../../styles/claim-card-mobile.scss";
 import { Button } from "../button";
 
@@ -8,12 +12,18 @@ interface ClaimCardTypes {
   created: string;
   type: string;
   status: string;
+  id: string;
 }
 export const ClaimCard = (prop: ClaimCardTypes) => {
+  const { isAdmin } = useTypedSelector((state) => state.user);
+  const { data } = useTypedSelector((state) => state.claims);
+  const dispatch = useTypedDispatch();
+  const navigate = useNavigate();
+
   return (
     <div className="claim-card-wrapper">
       <h5 className="claim-card-title">{prop.title}</h5>
-      <div className="claim-card">
+      <div className="claim-card" id={prop.id}>
         <div className="claim-card-desc">
           <span className="claim-card-desc-title">Created</span>
           <span className="claim-card-option">{prop.created}</span>
@@ -37,7 +47,15 @@ export const ClaimCard = (prop: ClaimCardTypes) => {
             {prop.status}
           </span>
         </div>
-        <Button text="Browse" className="create-new-claim cancel" onClick={() => console.log("a")} />
+        {isAdmin && (
+          <Button
+            text="Browse"
+            className="create-new-claim cancel"
+            onClick={(e) =>
+              setIncomingClaimValues(e, data, dispatch, SET_DATA, navigate)
+            }
+          />
+        )}
       </div>
     </div>
   );

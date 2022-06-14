@@ -19,7 +19,7 @@ export const MobileWrapper = (prop: MobileWrapperType) => {
 
   return (
     <div className={`${isMenu && "mobile-wrapper"}`}>
-      <HeaderMobile onClick={showHideMenu} />
+      <HeaderMobile onClick={showHideMenu} isShow={isMenu}/>
       {isMenu && <Menu mobile={true} />}
       {isMenu && (
         <div

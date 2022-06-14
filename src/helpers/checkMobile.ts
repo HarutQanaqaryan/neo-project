@@ -1,12 +1,7 @@
-const devices = new RegExp(
-  "Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini",
-  "i"
-);
-
 export const checkScreen = () => {
-  if (devices.test(navigator.userAgent)) {
-    return false;
-  } else {
+  if (window.matchMedia("(min-width: 800px)").matches) {
     return true;
+  } else {
+    return false;
   }
 };

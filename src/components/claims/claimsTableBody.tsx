@@ -1,9 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { checkClaimStatusColor } from "../../helpers/checkClaimStatusColor";
 import { checkClaimTypeColor } from "../../helpers/checkClaimTypeColor";
+import { setIncomingClaimValues } from "../../helpers/setIncomingClaimValues";
 import { useTypedDispatch, useTypedSelector } from "../../store";
 import { SET_DATA } from "../../store/types";
 import "../../styles/table-body.scss";
+
 interface TableBodyItemType {
   claims: Array<any>;
 }
@@ -11,25 +13,6 @@ export const TableBody = (prop: TableBodyItemType) => {
   const { isAdmin } = useTypedSelector((state) => state.user);
   const dispatch = useTypedDispatch();
   const navigate = useNavigate();
-
-  const incomingClaim = (e: React.MouseEvent<HTMLElement>) => {
-    let parentElemId = e.currentTarget.parentElement?.id;
-    let claimIds = prop.claims.map((el) => el._id);
-    claimIds.includes(parentElemId) &&
-      prop.claims.forEach((el) => {
-        if (parentElemId === el._id) {
-          dispatch({
-            type: SET_DATA,
-            title: el.title,
-            description: el.description,
-            claimType: el.type?.slug,
-            status: el.status?.slug,
-            id: el._id,
-          });
-        }
-      });
-    navigate("../home/incoming-claim");
-  };
 
   return (
     <tbody className="table-body">
@@ -54,7 +37,7 @@ export const TableBody = (prop: TableBodyItemType) => {
               {status ? status.name : ""}
             </span>
           </td>
-          {isAdmin && <td className="claim-actions" onClick={(e) => incomingClaim(e)}>
+          {isAdmin && <td className="claim-actions" onClick={(e) => setIncomingClaimValues(e, prop.claims, dispatch, SET_DATA, navigate)}>
             Browse
           </td>}
         </tr>
