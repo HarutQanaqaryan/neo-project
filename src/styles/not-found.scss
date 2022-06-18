@@ -1,0 +1,22 @@
+@import "./vars/variables.scss";
+
+.not-found-page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.not-found-code {
+    font-family: $baseFont;
+    color: #4f896c;
+    font-size: 150px;
+}
+.not-found-desc {
+    font-family: $baseFont;
+    color: #1c4b34;
+    font-size: 70px;
+    margin: 0%;
+}

@@ -1,12 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.scss";
+
 import { Provider } from "react-redux";
-import  store  from "./store";
+import store from "./store";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { LoginRegister } from "./pages/loginRegister";
 import { MainWrapper } from "./pages/mainWrapper";
 import { CreateEditClaim } from "./components/createEditNewClaim";
+import { NotFound } from "./components/notFound";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -22,6 +24,7 @@ root.render(
             <Route path="create-claim" element={<CreateEditClaim />} />
             <Route path="incoming-claim" element={<CreateEditClaim />} />
           </Route>
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>
