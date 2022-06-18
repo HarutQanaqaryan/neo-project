@@ -10,7 +10,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useTypedDispatch, useTypedSelector } from "../store";
 import { newClaim } from "../store/action-creators/new-claim";
 import { useCallback, useEffect, useState } from "react";
-import { isAdmin, newClaimTextPattern } from "../helpers/contstants";
+import { newClaimTextPattern } from "../helpers/contstants";
 import { NEW_CLAIM_SUCCESS, UPDATE_STATUS, UPDATE_TYPE } from "../store/types/actionTypes";
 import { checkSelectError } from "../helpers/checkSelectError";
 import { convertClaimTypes, getClaimTypes } from "../helpers/getClaimTypes";
@@ -20,6 +20,7 @@ export const CreateEditClaim = () => {
   const { title, description, type, status, id } = useTypedSelector(
     (state) => state.setClaimValues
   );
+  const { isAdmin } = useTypedSelector(state => state.user)
   const { success, error } = useTypedSelector((state) => state.newClaim);
   const [selectedValue, setSelectedValue] = useState(
     type ? convertClaimTypes(type) : ""

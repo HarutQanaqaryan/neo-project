@@ -3,14 +3,17 @@ import "../styles/header.scss";
 import userIcon from "../assets/user.png";
 import logOutIcon from "../assets/icons/icon-log-out.svg";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useTypedDispatch, useTypedSelector } from "../store";
+import { useTypedDispatch } from "../store";
 import { SearchTextField } from "./searchTexField";
 import { SEARCH_VALUE } from "../store/reducers/filterValues";
 import { LOG_OUT } from "../store/types/actionTypes";
+import React from "react";
 
-export const Header = () => {
+interface HeaderProps {
+  userName: string
+}
+export const Header = (prop: HeaderProps) => {
   const dispatch = useTypedDispatch();
-  const { fullName } = useTypedSelector((state) => state.user);
 
   const url = useLocation();
   const navigate = useNavigate();
@@ -42,7 +45,7 @@ export const Header = () => {
           className="menu-notification-icon"
         />
         <img src={userIcon} alt="User Icon" className="header-user-icon" />
-        <span className="menu-user-name">{fullName}</span>
+        <span className="menu-user-name">{prop.userName}</span>
         <img
           src={logOutIcon}
           alt="Log out icon"
