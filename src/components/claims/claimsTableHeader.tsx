@@ -3,8 +3,9 @@ import arrowsIcon from "../../assets/icons/icon-arows.svg";
 import { tableHeaders } from "../../helpers/tableHeader";
 import { useTypedDispatch } from "../../store";
 import { SORT_VALUE } from "../../store/reducers/filterValues";
+import React from "react";
 
-export const TableHeader = () => {
+export const TableHeader = React.memo(() => {
   const dispatch = useTypedDispatch();
   const lastElem = tableHeaders[tableHeaders.length - 1];
 
@@ -27,4 +28,4 @@ export const TableHeader = () => {
       </tr>
     </thead>
   );
-};
+});

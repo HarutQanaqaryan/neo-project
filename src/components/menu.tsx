@@ -1,10 +1,11 @@
 import { menuItems } from "../helpers/menuItems";
 import companyLogo from "../assets/company-logo-lil.svg";
 import "../styles/menu.scss";
+import React from "react";
 interface MenuTypes {
   mobile?: boolean
 }
-export const Menu = (prop: MenuTypes) => {
+export const Menu = React.memo((prop: MenuTypes) => {
   return (
     <div className="menu">
       {!prop.mobile && <img src={companyLogo} alt="Company Logo" className="menu-company-logo"/>}
@@ -18,4 +19,4 @@ export const Menu = (prop: MenuTypes) => {
       })}
     </div>
   );
-};
+});
