@@ -3,11 +3,11 @@ export const SORT_VALUE = "SORT_VALUE";
 
 interface ValueType {
   searchValue: string;
-  sortValue: string
+  sortValue: string;
 }
 const initialState: ValueType = {
   searchValue: "",
-  sortValue: ""
+  sortValue: "",
 };
 
 export const filterValuereducer = (state = initialState, action: any) => {

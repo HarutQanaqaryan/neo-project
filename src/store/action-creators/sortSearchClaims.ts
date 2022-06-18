@@ -6,7 +6,7 @@ import {
   GET_CLAIMS_ERROR,
   GET_CLAIMS_LOADING,
   GET_CLAIMS_SUCCESS,
-} from "../types";
+} from "../types/actionTypes";
 
 export const sortSearchClaims = (column: string, searchText: string): TypedThunk => {
   return async (dispatch: TypedDispatch) => {

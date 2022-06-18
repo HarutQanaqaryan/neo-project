@@ -1,5 +1,6 @@
 import { USER } from "../../helpers/contstants";
-import { REMOVE_USER, SET_USER, UserInfoActions, UserInfoState } from "../types";
+import { REMOVE_USER, SET_USER } from "../types/actionTypes";
+import { UserInfoActions, UserInfoState } from "../types/userInfo";
 const userInf = typeof USER === "string" && JSON.parse(USER)
 
 const initialState: UserInfoState = {

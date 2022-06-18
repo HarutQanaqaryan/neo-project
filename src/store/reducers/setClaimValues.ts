@@ -1,9 +1,8 @@
 import {
-  ClaimsValueActions,
-  SetClaimsValuesState,
   SET_DATA,
   UPDATE_STATUS,
-} from "../types";
+} from "../types/actionTypes";
+import { ClaimsValueActions, SetClaimsValuesState } from "../types/newClaim";
 
 const initialState: SetClaimsValuesState = {
   title: "",

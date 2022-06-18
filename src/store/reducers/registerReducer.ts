@@ -1,9 +1,8 @@
 import {
-    AuthAction,
-    RegisterState,
     REGISTER_SUCCESS,
     REGISTER_ERROR,
-  } from "../types";
+  } from "../types/actionTypes";
+import { AuthAction, RegisterState } from "../types/loginRegister";
   
   const initialState: RegisterState = {
     success: false,

@@ -7,7 +7,7 @@ import { sortSearchClaims } from "../../store/action-creators/sortSearchClaims";
 
 export const YourClaims = () => {
   const { data, loading, error } = useTypedSelector((state) => state.claims);
-  const { searchValue, sortValue } = useTypedSelector(
+  const { searchValue, sortValue} = useTypedSelector(
     (state) => state.filterValues
   );
   const dispatch = useTypedDispatch();
@@ -15,6 +15,7 @@ export const YourClaims = () => {
  useEffect(() => {
   dispatch(sortSearchClaims(sortValue.toLowerCase(), searchValue.toLowerCase()))
  }, [searchValue, sortValue, dispatch])
+
 
   useEffect(() => {
     dispatch(getClaims());

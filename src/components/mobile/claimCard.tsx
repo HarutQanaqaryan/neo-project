@@ -3,7 +3,7 @@ import { checkClaimStatusColor } from "../../helpers/checkClaimStatusColor";
 import { checkClaimTypeColor } from "../../helpers/checkClaimTypeColor";
 import { setIncomingClaimValues } from "../../helpers/setIncomingClaimValues";
 import { useTypedDispatch, useTypedSelector } from "../../store";
-import { SET_DATA } from "../../store/types";
+import { SET_DATA } from "../../store/types/actionTypes";
 import "../../styles/claim-card-mobile.scss";
 import { Button } from "../button";
 
@@ -14,6 +14,7 @@ interface ClaimCardTypes {
   status: string;
   id: string;
 }
+
 export const ClaimCard = (prop: ClaimCardTypes) => {
   const { isAdmin } = useTypedSelector((state) => state.user);
   const { data } = useTypedSelector((state) => state.claims);

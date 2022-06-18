@@ -11,7 +11,7 @@ import { useTypedDispatch, useTypedSelector } from "../store";
 import { newClaim } from "../store/action-creators/new-claim";
 import { useCallback, useEffect, useState } from "react";
 import { isAdmin, newClaimTextPattern } from "../helpers/contstants";
-import { NEW_CLAIM_SUCCES, UPDATE_STATUS, UPDATE_TYPE } from "../store/types";
+import { NEW_CLAIM_SUCCESS, UPDATE_STATUS, UPDATE_TYPE } from "../store/types/actionTypes";
 import { checkSelectError } from "../helpers/checkSelectError";
 import { convertClaimTypes, getClaimTypes } from "../helpers/getClaimTypes";
 import { editClaim } from "../store/action-creators/edit-claim";
@@ -49,7 +49,7 @@ export const CreateEditClaim = () => {
 
   const checkSucces = useCallback(() => {
     success && navigate("../home");
-    dispatch({ type: NEW_CLAIM_SUCCES, payload: false });
+    dispatch({ type: NEW_CLAIM_SUCCESS, payload: false });
   }, [dispatch, navigate, success]);
 
   const handleStatus = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {

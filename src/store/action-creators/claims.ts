@@ -2,7 +2,7 @@ import axios from "axios";
 import { TypedDispatch, TypedThunk } from "..";
 import { BASE_URL } from "../../helpers/contstants";
 import { requestHeader } from "../../helpers/requestHeader";
-import { GET_CLAIMS_ERROR, GET_CLAIMS_LOADING, GET_CLAIMS_SUCCESS } from "../types";
+import { GET_CLAIMS_ERROR, GET_CLAIMS_LOADING, GET_CLAIMS_SUCCESS } from "../types/actionTypes";
 
 export const getClaims = (): TypedThunk => {
 

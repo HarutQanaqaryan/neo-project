@@ -1,10 +1,9 @@
 import {
-  AuthAction,
   LOG_OUT,
   LOGIN_ERROR,
   LOGIN_SUCCESS,
-  AuthState,
-} from "../types";
+} from "../types/actionTypes";
+import { AuthAction, AuthState } from "../types/loginRegister";
 
 const initialState: AuthState = {
   error: "",

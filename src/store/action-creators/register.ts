@@ -1,7 +1,8 @@
 import axios from "axios";
 import { TypedDispatch, TypedThunk } from "..";
 import { BASE_URL } from "../../helpers/contstants";
-import { RegisterData, REGISTER_ERROR, REGISTER_SUCCESS } from "../types";
+import { REGISTER_ERROR, REGISTER_SUCCESS } from "../types/actionTypes";
+import { RegisterData } from "../types/loginRegister";
 
 export const registerUser = (data: RegisterData): TypedThunk => {
   return async (dispatch: TypedDispatch) => {

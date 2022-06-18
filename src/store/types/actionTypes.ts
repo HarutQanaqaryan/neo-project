@@ -1,0 +1,18 @@
+export const LOG_OUT = "SIGN_OUT";
+export const LOGIN_ERROR = "LOGIN_ERROR";
+export const LOGIN_SUCCESS = "SET_SUCCESS";
+export const SET_USER = "SET_USER";
+export const REMOVE_USER = "REMOVE_USER";
+export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
+export const REGISTER_ERROR = "REGISTER_ERROR";
+
+export const GET_CLAIMS_SUCCESS = "GET_CLAIMS_SUCCESS";
+export const GET_CLAIMS_ERROR = "GET_CLAIMS_ERROR";
+export const GET_CLAIMS_LOADING = "GET_CLAIMS_LOADING";
+
+export const NEW_CLAIM_SUCCESS = "NEW_CLAIM_SUCCES";
+export const NEW_CLAIM_ERROR = "NEW_CLAIM_ERROR";
+
+export const SET_DATA = "SET_DATA";
+export const UPDATE_TYPE = "UPDATE_TYPE";
+export const UPDATE_STATUS = "UPDATE_STATUS";

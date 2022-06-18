@@ -8,10 +8,11 @@ import { checkScreen } from "../helpers/checkMobile";
 
 export const MainWrapper = () => {
   const url = useLocation();
+  
   const renderComponent = () => {
     switch (url.pathname) {
       case "/home": {
-        return <YourClaims />;
+        return checkScreen() ? <YourClaims /> : <YourClaimsMobile />;
       }
       case "/home/create-claim": {
         return <CreateEditClaim />;
@@ -24,21 +25,6 @@ export const MainWrapper = () => {
     }
   };
 
-  const renderComponentMobile = () => {
-    switch (url.pathname) {
-      case "/home": {
-        return <YourClaimsMobile />;
-      }
-      case "/home/create-claim": {
-        return <CreateEditClaim/>;
-      }
-      case "/home/incoming-claim": {
-        return <CreateEditClaim />;
-      }
-      default:
-        return <YourClaims />;
-    }
-  };
   return (
     <>
       {checkScreen() ? (
@@ -47,7 +33,7 @@ export const MainWrapper = () => {
         </ClaimsWrapper>
       ) : (
         <MobileWrapper>
-          <>{renderComponentMobile()}</>
+          <>{renderComponent()}</>
         </MobileWrapper>
       )}
     </>

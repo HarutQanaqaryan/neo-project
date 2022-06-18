@@ -3,7 +3,8 @@ import { TypedDispatch, TypedThunk } from "..";
 import { BASE_URL } from "../../helpers/contstants";
 import { getClaimTypes } from "../../helpers/getClaimTypes";
 import { requestHeader } from "../../helpers/requestHeader";
-import { NEW_CLAIM_SUCCES, NEW_CLAIM_ERROR, NewClaimData } from "../types";
+import { NEW_CLAIM_SUCCESS, NEW_CLAIM_ERROR } from "../types/actionTypes";
+import { NewClaimData } from "../types/newClaim";
 
 export const newClaim = (
   data: NewClaimData,
@@ -22,7 +23,7 @@ export const newClaim = (
         requestHeader()
       );
 
-      dispatch({ type: NEW_CLAIM_SUCCES, payload: true });
+      dispatch({ type: NEW_CLAIM_SUCCESS, payload: true });
     } catch (e) {
       dispatch({ type: NEW_CLAIM_ERROR, payload: true });
       console.log(e);

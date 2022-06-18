@@ -1,9 +1,8 @@
 import {
-    NEW_CLAIM_SUCCES,
+    NEW_CLAIM_SUCCESS,
     NEW_CLAIM_ERROR,
-    NewClaimAction,
-    NewClaimState
-  } from "../types";
+  } from "../types/actionTypes";
+import { NewClaimAction, NewClaimState } from "../types/newClaim";
   
   const initialState:  NewClaimState = {
     success: false,
@@ -12,7 +11,7 @@ import {
   
   export const newClaimReducer = (state = initialState, action: NewClaimAction) => {
     switch (action.type) {
-      case NEW_CLAIM_SUCCES:
+      case NEW_CLAIM_SUCCESS:
         return {
             success: action.payload,
             error: false

@@ -3,7 +3,7 @@ import { checkClaimStatusColor } from "../../helpers/checkClaimStatusColor";
 import { checkClaimTypeColor } from "../../helpers/checkClaimTypeColor";
 import { setIncomingClaimValues } from "../../helpers/setIncomingClaimValues";
 import { useTypedDispatch, useTypedSelector } from "../../store";
-import { SET_DATA } from "../../store/types";
+import { SET_DATA } from "../../store/types/actionTypes";
 import "../../styles/table-body.scss";
 
 interface TableBodyItemType {

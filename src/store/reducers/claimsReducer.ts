@@ -1,10 +1,9 @@
 import {
   GET_CLAIMS_SUCCESS,
   GET_CLAIMS_ERROR,
-  GetClaimsAction,
-  GetClaimsData,
   GET_CLAIMS_LOADING,
-} from "../types";
+} from "../types/actionTypes";
+import { GetClaimsAction, GetClaimsData } from "../types/getClaims";
 
 const initialState: GetClaimsData = {
   loading: false,

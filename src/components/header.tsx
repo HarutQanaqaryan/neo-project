@@ -6,7 +6,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useTypedDispatch, useTypedSelector } from "../store";
 import { SearchTextField } from "./searchTexField";
 import { SEARCH_VALUE } from "../store/reducers/filterValues";
-import { LOG_OUT } from "../store/types";
+import { LOG_OUT } from "../store/types/actionTypes";
 
 export const Header = () => {
   const dispatch = useTypedDispatch();

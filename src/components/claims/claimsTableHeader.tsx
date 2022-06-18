@@ -9,17 +9,18 @@ export const TableHeader = () => {
   const lastElem = tableHeaders[tableHeaders.length - 1];
 
   const handleOption = ({ target }: any) => {
-    target.innerText !== lastElem && dispatch({ type: SORT_VALUE, sortValue: target.innerText });
+    target.innerText !== lastElem &&
+      dispatch({ type: SORT_VALUE, sortValue: target.innerText });
   };
 
   return (
     <thead className="table-head">
       <tr className="table-head-row" onClick={handleOption}>
         {tableHeaders.map((el) => (
-          <th key={el} >
+          <th key={el}>
             {el}
             {el !== lastElem && (
-              <img src={arrowsIcon} alt="Arrows icon" onClick={handleOption} />
+              <img src={arrowsIcon} alt="Arrows icon" />
             )}
           </th>
         ))}

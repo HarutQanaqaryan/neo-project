@@ -1,8 +1,9 @@
 import axios from "axios";
 import { TypedDispatch, TypedThunk } from "..";
 import { BASE_URL } from "../../helpers/contstants";
-import { SET_USER, SignInData } from "../types";
-import { LOGIN_ERROR, LOGIN_SUCCESS } from "../types";
+import { SET_USER } from "../types/actionTypes";
+import { LOGIN_ERROR, LOGIN_SUCCESS } from "../types/actionTypes";
+import { SignInData } from "../types/loginRegister";
 
 export const loginUser = (data: SignInData): TypedThunk => {
   return async (dispatch: TypedDispatch) => {
