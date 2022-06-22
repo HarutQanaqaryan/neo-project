@@ -1,7 +1,7 @@
 import { useTypedSelector } from "../store";
 import "../styles/claims-wrapper.scss";
-import { Header } from "./Header";
-import { Menu } from "./Menu";
+import { Header } from "./header";
+import { Menu } from "./menu";
 
 interface ClaimWrapperType {
   children: JSX.Element[] | JSX.Element;

@@ -1,8 +1,8 @@
 import buttonIcon from "../../assets/icons/icon-plus.svg";
-import { Button } from "../Button";
+import { Button } from "../button";
 import "../../styles/button.scss";
 import "../../styles/claims.scss";
-import { ClaimsTitle } from "./ClaimsTitle";
+import { ClaimsTitle } from "./claimsTitle";
 import { useNavigate } from "react-router-dom";
 import { useTypedSelector } from "../../store";
 

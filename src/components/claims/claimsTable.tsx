@@ -1,11 +1,11 @@
-import { TableBody } from "./ClaimsTableBody";
-import { TableHeader } from "./ClaimsTableHeader";
+import { TableBody } from "./claimsTableBody";
+import { TableHeader } from "./claimsTableHeader";
 import "../../styles/claims-table.scss";
-import { YourClaimsTitle } from "./YourClaimsTitle";
+import { YourClaimsTitle } from "./yourClaimsTitle";
 import { useEffect, useState } from "react";
-import { Pagination } from "../pagination/Pagination";
-import { Loading } from "../Loading";
-import { ErrorRequest } from "../Error";
+import { Pagination } from "../pagination/pagination";
+import { Loading } from "../loading";
+import { ErrorRequest } from "../error";
 
 interface ClaimsTableType {
   claims: Array<any>;

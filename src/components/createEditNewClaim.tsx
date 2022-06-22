@@ -1,9 +1,9 @@
-import { TextField } from "./TextField";
+import { TextField } from "./textField";
 import "../styles/claims.scss";
-import { Select } from "./Select";
+import { Select } from "./select";
 import selectIcon from "../assets/icons/arrow-bottom.svg";
-import { Button } from "./Button";
-import { ClaimsTitle } from "./claims/ClaimsTitle";
+import { Button } from "./button";
+import { ClaimsTitle } from "./claims/claimsTitle";
 import { FormProvider, useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useTypedDispatch, useTypedSelector } from "../store";
