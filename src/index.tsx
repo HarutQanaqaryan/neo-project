@@ -5,8 +5,8 @@ import "./index.scss";
 import { Provider } from "react-redux";
 import store from "./store";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { LoginRegister } from "./pages/loginRegister";
-import { MainWrapper } from "./pages/mainWrapper";
+import { LoginRegister } from "./pages/LoginRegister";
+import { MainWrapper } from "./pages/MainWrapper";
 import { CreateEditClaim } from "./components/CreateEditNewClaim";
 import { NotFound } from "./components/NotFound";
 
