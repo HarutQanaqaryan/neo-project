@@ -20,12 +20,12 @@ export const TableBody = (prop: TableBodyItemType) => {
         <tr key={_id} id={_id}>
           <td className="claim-cell title">{title}</td>
           <td className="claim-cell">{createdAt.substring(0, 10)}</td>
-          <td className="claim-cell">
+          <td className="claim-cell type">
             <span
               className="claim-type"
               style={checkClaimTypeColor(type?.name)}
             ></span>
-            {type ? type.name : ""}
+            <span>{type ? type.name : ""}</span>
           </td>
           <td className="claim-cell">
             <span

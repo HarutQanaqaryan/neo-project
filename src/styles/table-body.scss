@@ -24,13 +24,18 @@
     text-overflow: ellipsis;
   }
 }
+.type {
+  height: inherit;
+  display: flex;
+  align-items: center;
+}
 .claim-type {
   width: 16px;
   height: 16px;
   display: inline-block;
   margin-right: 16px;
   border-radius: 50%;
-  margin-top: 2px;
+  margin-top: -3px;
 }
 .claim-actions {
   font-family: $baseFont;
