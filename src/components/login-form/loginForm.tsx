@@ -1,9 +1,9 @@
 import emailIcon from "../../assets/icons/icon-mail.svg";
 import lockIcon from "../../assets/icons/icon-lock.svg";
 import { NavLink, useNavigate } from "react-router-dom";
-import { TextField } from "../TextField";
-import { CheckBox } from "../CheckBox";
-import { Button } from "../Button";
+import { TextField } from "../textField";
+import { CheckBox } from "../checkBox";
+import { Button } from "../button";
 import { useEffect, useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { loginUser } from "../../store/action-creators/login";

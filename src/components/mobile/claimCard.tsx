@@ -5,7 +5,7 @@ import { setIncomingClaimValues } from "../../helpers/setIncomingClaimValues";
 import { useTypedDispatch, useTypedSelector } from "../../store";
 import { SET_DATA } from "../../store/types/actionTypes";
 import "../../styles/claim-card-mobile.scss";
-import { Button } from "../Button";
+import { Button } from "../button";
 
 interface ClaimCardTypes {
   title: string;

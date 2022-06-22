@@ -4,7 +4,7 @@ import userIcon from "../assets/user.png";
 import logOutIcon from "../assets/icons/icon-log-out.svg";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useTypedDispatch } from "../store";
-import { SearchTextField } from "./SearchTexField";
+import { SearchTextField } from "./searchTexField";
 import { SEARCH_VALUE } from "../store/reducers/filterValues";
 import { LOG_OUT } from "../store/types/actionTypes";
 import React from "react";

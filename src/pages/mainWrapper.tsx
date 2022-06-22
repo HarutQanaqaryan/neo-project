@@ -1,9 +1,9 @@
 import { useLocation } from "react-router-dom";
-import { YourClaims } from "../components/claims/YourClaims";
-import { ClaimsWrapper } from "../components/ClaimsWrapper";
-import { CreateEditClaim } from "../components/CreateEditNewClaim";
-import { MobileWrapper } from "../components/mobile/MobileWrapper";
-import { YourClaimsMobile } from "../components/mobile/YourClaimsMobile";
+import { YourClaims } from "../components/claims/yourClaims";
+import { ClaimsWrapper } from "../components/claimsWrapper";
+import { CreateEditClaim } from "../components/createEditNewClaim";
+import { MobileWrapper } from "../components/mobile/mobileWrapper";
+import { YourClaimsMobile } from "../components/mobile/yourClaimsMobile";
 import { checkScreen } from "../helpers/checkMobile";
 
 export const MainWrapper = () => {
