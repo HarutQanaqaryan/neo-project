@@ -1,12 +1,12 @@
-import { Button } from "../Button";
-import { ClaimsTitle } from "../claims/ClaimsTitle";
-import { ClaimCard } from "./ClaimCard";
+import { Button } from "../button";
+import { ClaimsTitle } from "../claims/claimsTitle";
+import { ClaimCard } from "./claimCard";
 import buttonIcon from "../../assets/icons/icon-plus.svg";
 import { useTypedDispatch, useTypedSelector } from "../../store";
 import { useEffect } from "react";
 import { getClaims } from "../../store/action-creators/claims";
-import { Loading } from "../Loading";
-import { ErrorRequest } from "../Error";
+import { Loading } from "../loading";
+import { ErrorRequest } from "../error";
 import { useNavigate } from "react-router-dom";
 
 export const YourClaimsMobile = () => {

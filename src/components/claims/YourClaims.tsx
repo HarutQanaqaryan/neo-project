@@ -1,4 +1,4 @@
-import { ClaimsTable } from "./ClaimsTable";
+import { ClaimsTable } from "./claimsTable";
 import "../../styles/claims.scss";
 import { useEffect } from "react";
 import { useTypedDispatch, useTypedSelector } from "../../store";

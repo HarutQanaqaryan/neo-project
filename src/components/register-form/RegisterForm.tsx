@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 import { EMAIL_PATTERN, PASS_PATTERN, USER_NAME_PATTERN } from "../../helpers/contstants";
 import { useTypedDispatch, useTypedSelector } from "../../store";
 import { registerUser } from "../../store/action-creators/register";
-import { Button } from "../Button";
-import { TextField } from "../TextField";
+import { Button } from "../button";
+import { TextField } from "../textField";
 
 export const RegisterForm = () => {
   const { success, error } = useTypedSelector((state) => state.register);
