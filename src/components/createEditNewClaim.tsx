@@ -1,10 +1,10 @@
-import { TextField } from "./textField";
+import { TextField } from "./TextField";
 import "../styles/claims.scss";
-import { Select } from "./select";
+import { Select } from "./Select";
 import selectIcon from "../assets/icons/arrow-bottom.svg";
 import { claimTypes } from "../helpers/claimTypes";
-import { Button } from "./button";
-import { ClaimsTitle } from "./claims/claimsTitle";
+import { Button } from "./Button";
+import { ClaimsTitle } from "./claims/ClaimsTitle";
 import { FormProvider, useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useTypedDispatch, useTypedSelector } from "../store";

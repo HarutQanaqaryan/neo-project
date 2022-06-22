@@ -7,8 +7,8 @@ import {
 } from "../../helpers/contstants";
 import { useTypedDispatch, useTypedSelector } from "../../store";
 import { registerUser } from "../../store/action-creators/register";
-import { Button } from "../button";
-import { TextField } from "../textField";
+import { Button } from "../Button";
+import { TextField } from "../TextField";
 
 export const RegisterForm = () => {
   const { success, error } = useTypedSelector((state) => state.register);

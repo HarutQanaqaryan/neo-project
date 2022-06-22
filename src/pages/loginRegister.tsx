@@ -1,11 +1,11 @@
-import { LoginImg } from "../components/login-form/loginImg";
+import { LoginImg } from "../components/login-form/LoginImg";
 import mainIcon from "../assets/main-logo.svg";
-import { Footer } from "../components/footer";
+import { Footer } from "../components/Footer";
 import { useLocation } from "react-router-dom";
-import { LoginForm } from "../components/login-form/loginForm";
+import { LoginForm } from "../components/login-form/LoginForm";
 import "../styles/login-user-authorization.scss";
 import "../styles/button.scss";
-import { RegisterForm } from "../components/register-form/registerForm";
+import { RegisterForm } from "../components/register-form/RegisterForm";
 import { checkScreen } from "../helpers/checkMobile";
 
 export const LoginRegister = () => {

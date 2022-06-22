@@ -7,8 +7,8 @@ import store from "./store";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { LoginRegister } from "./pages/loginRegister";
 import { MainWrapper } from "./pages/mainWrapper";
-import { CreateEditClaim } from "./components/createEditNewClaim";
-import { NotFound } from "./components/notFound";
+import { CreateEditClaim } from "./components/CreateEditNewClaim";
+import { NotFound } from "./components/NotFound";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
