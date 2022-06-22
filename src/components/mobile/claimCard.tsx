@@ -53,7 +53,13 @@ export const ClaimCard = (prop: ClaimCardTypes) => {
             text="Browse"
             className="create-new-claim cancel"
             onClick={(e) =>
-              setIncomingClaimValues(e, data, dispatch, SET_DATA, navigate)
+              setIncomingClaimValues({
+                e: e,
+                claims: data,
+                dispatch: dispatch,
+                action: SET_DATA,
+                navigate: navigate,
+              })
             }
           />
         )}

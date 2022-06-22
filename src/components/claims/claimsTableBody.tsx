@@ -17,7 +17,7 @@ export const TableBody = (prop: TableBodyItemType) => {
   return (
     <tbody className="table-body">
       {prop.claims.map(({ _id, title, createdAt, type, status }) => (
-        <tr key={_id} id={_id} >
+        <tr key={_id} id={_id}>
           <td className="claim-cell title">{title}</td>
           <td className="claim-cell">{createdAt.substring(0, 10)}</td>
           <td className="claim-cell">
@@ -37,9 +37,22 @@ export const TableBody = (prop: TableBodyItemType) => {
               {status ? status.name : ""}
             </span>
           </td>
-          {isAdmin && <td className="claim-actions" onClick={(e) => setIncomingClaimValues(e, prop.claims, dispatch, SET_DATA, navigate)}>
-            Browse
-          </td>}
+          {isAdmin && (
+            <td
+              className="claim-actions"
+              onClick={(e) =>
+                setIncomingClaimValues({
+                  e: e,
+                  claims: prop.claims,
+                  dispatch: dispatch,
+                  action: SET_DATA,
+                  navigate: navigate,
+                })
+              }
+            >
+              Browse
+            </td>
+          )}
         </tr>
       ))}
     </tbody>

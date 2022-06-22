@@ -18,7 +18,7 @@ export const loginUser = (data: SignInData): TypedThunk => {
         id: response.data.user_id,
         role: response.data.role.slug,
         isAdmin: response.data.role.slug === "admin",
-      }
+      };
       dispatch({ type: LOGIN_SUCCESS, payload: true });
       dispatch({
         type: SET_USER,
@@ -28,17 +28,14 @@ export const loginUser = (data: SignInData): TypedThunk => {
         role: response.data.role.slug,
         isAdmin: response.data.role.slug === "admin",
       });
-      localStorage.setItem(
-        "User",
-        JSON.stringify(user)
-      );
+      localStorage.setItem("User", JSON.stringify(user));
 
       localStorage.setItem("Token", JSON.stringify(response.data.token));
-    } catch ({ response: { status } }) {
+    } catch (e: any) {
       const notRegistered =
-        status === 401 &&
+        e.response.status === 401 &&
         "User not registered or incorrectly entered email/password";
-      const serverError = status === 0 && "Server side error";
+      const serverError = e.response.status === 0 && "Server side error";
       dispatch({
         type: LOGIN_ERROR,
         payload: notRegistered || serverError,

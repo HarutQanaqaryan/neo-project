@@ -11,17 +11,4 @@ export const requestHeader = () => {
   };
 };
 
-export const requestBody = (
-  title: string,
-  description: string,
-  selectValue: string
-) => {
-  return {
-    data: JSON.stringify({
-      title: title,
-      description: description,
-      type: selectValue.toLowerCase(),
-      status: "new",
-    }),
-  };
-};
+

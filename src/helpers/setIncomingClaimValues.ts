@@ -1,12 +1,17 @@
-export const setIncomingClaimValues = (
-  e: React.MouseEvent<HTMLElement>,
-  claims: any,
-  dispatch: any,
-  action: string,
-  navigate: any
-) => {
-  let parentElemId = e.currentTarget.parentElement?.id;
-  let claimIds = claims.map((el: any) => el._id);
+type SetIncomingClaimValueTypes = {
+  e: React.MouseEvent<HTMLElement>;
+  claims: any;
+  dispatch: any;
+  action: string;
+  navigate: any;
+};
+
+export const setIncomingClaimValues = (param: SetIncomingClaimValueTypes) => {
+  const { e, claims, dispatch, action, navigate } = param;
+
+  const parentElemId = e.currentTarget.parentElement?.id;
+  const claimIds = claims.map((el: any) => el._id);
+
   claimIds.includes(parentElemId) &&
     claims.forEach((el: any) => {
       if (parentElemId === el._id) {
