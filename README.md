@@ -38,3 +38,14 @@ ___
     - `npm install`
   
     - `npm start`
+  ___
+
+  ### ***Test Login/Password***
+
+- Worker
+   - *Email:*  `user-work@gmail.com`
+   - *Password:* `testpass` 
+
+- Admin
+  - *Email:* `user-admin@gmail.com`
+  - *Password:* `testpass `
