@@ -1,8 +1,8 @@
-### **Web application for managing employees' claims to the organization's help desk**
+## **Web application for managing employees' claims to the organization's help desk**
 
 ___
 
-### *Task List*
+### ***Task List***
  - Coding interface by layout
  - Implement user authorization/registration
 - Show claims in home page
@@ -12,7 +12,7 @@ ___
 - Sending requests/handling errors
 
 ___
-### *Technology stack*
+### ***Technology stack***
 - HTML5
 - SASS v7.0.1
 - React v18.1.0
@@ -24,12 +24,17 @@ ___
 
 ___
 
-### *Install and run*
- - **Front-end**
+### ***Install and run***
+ - *Front-end*
     - `git clone https://github.com/HarutQanaqaryan/neo-project.git`
+  
     - `npm install`
+  
     - `npm start`
-- **Back-end** 
+- *Back-end* 
+  
    - `git clone https://github.com/aalbertian/rest-api-tc.git`
+  
     - `npm install`
+  
     - `npm start`
