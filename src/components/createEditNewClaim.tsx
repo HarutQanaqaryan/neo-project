@@ -2,7 +2,6 @@ import { TextField } from "./TextField";
 import "../styles/claims.scss";
 import { Select } from "./Select";
 import selectIcon from "../assets/icons/arrow-bottom.svg";
-import { claimTypes } from "../helpers/claimTypes";
 import { Button } from "./Button";
 import { ClaimsTitle } from "./claims/ClaimsTitle";
 import { FormProvider, useForm } from "react-hook-form";
@@ -10,7 +9,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useTypedDispatch, useTypedSelector } from "../store";
 import { newClaim } from "../store/action-creators/new-claim";
 import { useCallback, useEffect, useState } from "react";
-import { newClaimTextPattern } from "../helpers/contstants";
+import { CLAIM_TYPES, NEW_CLAIM_TEXT_PATTERN } from "../helpers/contstants";
 import { NEW_CLAIM_SUCCESS, UPDATE_STATUS, UPDATE_TYPE } from "../store/types/actionTypes";
 import { checkSelectError } from "../helpers/checkSelectError";
 import { convertClaimTypes, getClaimTypes } from "../helpers/getClaimTypes";
@@ -76,7 +75,7 @@ export const CreateEditClaim = () => {
             uniqueStyle="create-new-claim-input"
             defaultValue={isIncomingPage ? title : ""}
             pattern={{
-              value: newClaimTextPattern,
+              value: NEW_CLAIM_TEXT_PATTERN,
               message: "Only latin letters",
             }}
             error={methods.formState.errors.title}
@@ -90,7 +89,7 @@ export const CreateEditClaim = () => {
             icon={selectIcon}
             label="TYPE"
             uniqueStyle="create-new-claim-input"
-            options={claimTypes}
+            options={CLAIM_TYPES}
             setSelectValue={getSelectValue}
             error={isSelectError}
             disabled={isAdmin}
@@ -102,7 +101,7 @@ export const CreateEditClaim = () => {
             uniqueStyle="create-new-claim-input"
             defaultValue={isIncomingPage ? description : ""}
             pattern={{
-              value: newClaimTextPattern,
+              value: NEW_CLAIM_TEXT_PATTERN,
               message: "Only latin letters",
             }}
             error={methods.formState.errors.description}

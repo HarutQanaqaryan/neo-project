@@ -6,7 +6,7 @@ import currencyIcon from "../assets/icons/currency.svg";
 import baseIcon from "../assets/icons/base.svg";
 import locationIcon from "../assets/icons/location.svg";
 
-export const menuItems = [
+export const MENU_ITEMS = [
   { name: "Home", icon: homeIcon, current: true },
   { name: "Services", icon: servicesIcon, current: false },
   { name: "Storage", icon: storageIcon, current: false },

@@ -1,5 +1,5 @@
-import { claimTypes } from "./claimTypes";
+import { CLAIM_TYPES } from "./contstants";
 
 export const checkSelectError = (type: string) => {
- return claimTypes.some((el) => el === type);
+  return CLAIM_TYPES.some((el) => el === type);
 };

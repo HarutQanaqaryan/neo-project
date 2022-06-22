@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { loginUser } from "../../store/action-creators/login";
 import { useTypedDispatch, useTypedSelector } from "../../store";
-import { emailPattern, passwordPattern } from "../../helpers/contstants";
+import { EMAIL_PATTERN, PASS_PATTERN } from "../../helpers/contstants";
 
 export const LoginForm = () => {
   const [isChecked, setIsChecked] = useState(false);
@@ -42,7 +42,7 @@ export const LoginForm = () => {
           icon={emailIcon}
           uniqueStyle="login-authorization_input"
           pattern={{
-            value: emailPattern,
+            value: EMAIL_PATTERN,
             message: "Mail should look like this: johnsmith@gmail.com",
           }}
           error={methods.formState.errors.login}
@@ -55,7 +55,7 @@ export const LoginForm = () => {
           icon={lockIcon}
           uniqueStyle="login-authorization_input"
           pattern={{
-            value: passwordPattern,
+            value: PASS_PATTERN,
             message:
               "The password must be 6-18 characters long and only Latin letters",
           }}

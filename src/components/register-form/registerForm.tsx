@@ -1,10 +1,6 @@
 import { FormProvider, useForm } from "react-hook-form";
 import { NavLink } from "react-router-dom";
-import {
-  emailPattern,
-  passwordPattern,
-  userNamePattern,
-} from "../../helpers/contstants";
+import { EMAIL_PATTERN, PASS_PATTERN, USER_NAME_PATTERN } from "../../helpers/contstants";
 import { useTypedDispatch, useTypedSelector } from "../../store";
 import { registerUser } from "../../store/action-creators/register";
 import { Button } from "../Button";
@@ -32,7 +28,7 @@ export const RegisterForm = () => {
           label="FIRST NAME"
           uniqueStyle="login-authorization_input"
           pattern={{
-            value: userNamePattern,
+            value: USER_NAME_PATTERN,
             message: "Only latin letters",
           }}
           error={methods.formState.errors.firstName}
@@ -44,7 +40,7 @@ export const RegisterForm = () => {
           label="LAST NAME"
           uniqueStyle="login-authorization_input"
           pattern={{
-            value: userNamePattern,
+            value: USER_NAME_PATTERN,
             message: "Only latin letters",
           }}
           error={methods.formState.errors.lastName}
@@ -56,7 +52,7 @@ export const RegisterForm = () => {
           label="E-MAIL"
           uniqueStyle="login-authorization_input"
           pattern={{
-            value: emailPattern,
+            value: EMAIL_PATTERN,
             message: "Mail should look like this: johnsmith@gmail.com",
           }}
           error={methods.formState.errors.email}
@@ -68,7 +64,7 @@ export const RegisterForm = () => {
           label="PASSWORD"
           uniqueStyle="login-authorization_input"
           pattern={{
-            value: passwordPattern,
+            value: PASS_PATTERN,
             message:
               "The password must be 6-18 characters long and only Latin letters",
           }}

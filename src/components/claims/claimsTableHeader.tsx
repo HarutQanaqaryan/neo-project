@@ -1,13 +1,13 @@
 import "../../styles/table-head.scss";
 import arrowsIcon from "../../assets/icons/icon-arows.svg";
-import { tableHeaders } from "../../helpers/tableHeader";
 import { useTypedDispatch } from "../../store";
 import { SORT_VALUE } from "../../store/reducers/filterValues";
 import React from "react";
+import { TABLE_HEADERS } from "../../helpers/contstants";
 
 export const TableHeader = React.memo(() => {
   const dispatch = useTypedDispatch();
-  const lastElem = tableHeaders[tableHeaders.length - 1];
+  const lastElem = TABLE_HEADERS[TABLE_HEADERS.length - 1];
 
   const handleOption = ({ target }: any) => {
     target.innerText !== lastElem &&
@@ -17,7 +17,7 @@ export const TableHeader = React.memo(() => {
   return (
     <thead className="table-head">
       <tr className="table-head-row" onClick={handleOption}>
-        {tableHeaders.map((el) => (
+        {TABLE_HEADERS.map((el) => (
           <th key={el}>
             {el}
             {el !== lastElem && (
