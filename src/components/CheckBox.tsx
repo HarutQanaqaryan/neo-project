@@ -8,6 +8,8 @@ interface CheckBoxProps {
   name: string
 }
 
+
+
 export const CheckBox = (props: CheckBoxProps) => {
   return (
     <div className="checkbox-block">
