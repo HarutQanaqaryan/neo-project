@@ -7,4 +7,3 @@ export const ErrorRequest = () => {
     <span>Error!</span>
   </div>
   )
-}

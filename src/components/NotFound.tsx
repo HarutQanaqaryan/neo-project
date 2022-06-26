@@ -7,4 +7,3 @@ export const NotFound = () => {
            <h3 className="not-found-desc">Page Not Found !</h3>
         </div>
     )
-}
