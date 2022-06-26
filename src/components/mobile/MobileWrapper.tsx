@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu } from "../Menu";
-import { HeaderMobile } from "./Header-mobile";
+import { HeaderMobile } from "./HeaderMobile";
 
 interface MobileWrapperType {
   children: JSX.Element[] | JSX.Element;
