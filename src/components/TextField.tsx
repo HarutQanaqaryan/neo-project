@@ -21,7 +21,7 @@ export const TextField = (prop: TextFieldProps) => {
   const register = useFormContext();
 
   return (
-    <div className={`text-field ${prop.uniqueStyle}`}>
+    <div className={`${prop.uniqueStyle}`}>
       <label className="text-field_label">{prop.label}</label>
       <div className={`text-field_input ${prop.error && "error"}`} tabIndex={1}>
         <input

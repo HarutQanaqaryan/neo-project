@@ -71,7 +71,7 @@ export const LoginForm = () => {
         />
         {error && <span className="success-error">{error}</span>}
         <Button text="Login" className={"login-user_btn"} />
-        <p className="login-user_request-register">
+        <span className="login-user_request-register">
           Not a member?{" "}
           <NavLink
             className="login-user_request-register_link"
@@ -79,7 +79,7 @@ export const LoginForm = () => {
           >
             Request registration
           </NavLink>
-        </p>
+        </span>
       </form>
     </FormProvider>
   );

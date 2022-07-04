@@ -31,7 +31,11 @@
     font-size: 16px;
   }
 }
-
+.login-user_btn {
+  @media screen and (max-width: 800px) {
+    max-width: 95vw;
+  }
+}
 .claims-head_btn {
   width: 200px;
 }

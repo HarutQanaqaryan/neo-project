@@ -21,7 +21,6 @@
   background: #f0f0f0;
   border-radius: $baseBorderRadius;
   max-width: 100%;
-  min-width: 300px;
   display: flex;
   padding: 0px 16px 0px 16px;
   margin-top: 10px;
@@ -57,7 +56,7 @@
 .login-authorization_input {
   margin-bottom: 30px;
   @media screen and (max-width: 800px) {
-    max-width: 350px;
+    max-width: 95vw;
   }
 }
 .error {
