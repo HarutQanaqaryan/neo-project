@@ -7,7 +7,7 @@ import { RegisterData } from "../types/loginRegister";
 export const registerUser = (data: RegisterData): TypedThunk => {
   return async (dispatch: TypedDispatch) => {
     try {
-      await axios.post(`${BASE_URL}/auth/registratio`, {
+      await axios.post(`${BASE_URL}/auth/registration`, {
         fullName: `${data.firstName} ${data.lastName}`,
         email: data.email,
         password: data.password,
