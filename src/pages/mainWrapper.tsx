@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { YourClaims } from "../components/claims/YourClaims";
 import { ClaimsWrapper } from "../components/ClaimsWrapper";
 import { CreateEditClaim } from "../components/CreateEditNewClaim";
@@ -8,6 +8,7 @@ import { checkScreen } from "../helpers/checkMobile";
 
 export const MainWrapper = () => {
   const url = useLocation();
+  const {claimId} = useParams()
   
   const renderComponent = () => {
     switch (url.pathname) {
@@ -17,7 +18,7 @@ export const MainWrapper = () => {
       case "/home/create-claim": {
         return <CreateEditClaim />;
       }
-      case "/home/incoming-claim": {
+      case `/home/incoming-claim/${claimId}`: {
         return <CreateEditClaim />;
       }
       default:

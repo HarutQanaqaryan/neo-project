@@ -22,7 +22,7 @@ root.render(
           <Route path="registration" element={<LoginRegister />} />
           <Route path="home" element={<MainWrapper />}>
             <Route path="create-claim" element={<CreateEditClaim />} />
-            <Route path="incoming-claim" element={<CreateEditClaim />} />
+            <Route path="incoming-claim/:claimId" element={<CreateEditClaim />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>

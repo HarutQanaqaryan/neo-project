@@ -1,3 +1,4 @@
+import { NavLink, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { checkClaimStatusColor } from "../../helpers/checkClaimStatusColor";
 import { checkClaimTypeColor } from "../../helpers/checkClaimTypeColor";
@@ -12,7 +13,6 @@ interface TableBodyItemType {
 export const TableBody = (prop: TableBodyItemType) => {
   const { isAdmin } = useTypedSelector((state) => state.user);
   const dispatch = useTypedDispatch();
-  const navigate = useNavigate();
 
   return (
     <tbody className="table-body">
@@ -46,11 +46,15 @@ export const TableBody = (prop: TableBodyItemType) => {
                   claims: prop.claims,
                   dispatch: dispatch,
                   action: SET_DATA,
-                  navigate: navigate,
                 })
               }
             >
-              Browse
+              <NavLink
+                to={`incoming-claim/${_id}`}
+                style={{textDecoration: "none",  color: "#148bff"}}
+              >
+                Browse
+              </NavLink>
             </td>
           )}
         </tr>

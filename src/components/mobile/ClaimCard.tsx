@@ -1,3 +1,4 @@
+import { NavLink, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { checkClaimStatusColor } from "../../helpers/checkClaimStatusColor";
 import { checkClaimTypeColor } from "../../helpers/checkClaimTypeColor";
@@ -19,7 +20,7 @@ export const ClaimCard = (prop: ClaimCardTypes) => {
   const { isAdmin } = useTypedSelector((state) => state.user);
   const { data } = useTypedSelector((state) => state.claims);
   const dispatch = useTypedDispatch();
-  const navigate = useNavigate();
+  const {claimId} = useParams()
 
   return (
     <div className="claim-card-wrapper">
@@ -49,19 +50,20 @@ export const ClaimCard = (prop: ClaimCardTypes) => {
           </span>
         </div>
         {isAdmin && (
-          <Button
-            text="Browse"
-            className="create-new-claim cancel"
-            onClick={(e) =>
-              setIncomingClaimValues({
-                e: e,
-                claims: data,
-                dispatch: dispatch,
-                action: SET_DATA,
-                navigate: navigate,
-              })
-            }
-          />
+          <NavLink to={`/home/incoming-claim/${claimId}`} style={{textDecoration: "none"}}>
+            <Button
+              text="Browse"
+              className="create-new-claim cancel"
+              onClick={(e) =>
+                setIncomingClaimValues({
+                  e: e,
+                  claims: data,
+                  dispatch: dispatch,
+                  action: SET_DATA,
+                })
+              }
+            />
+          </NavLink>
         )}
       </div>
     </div>

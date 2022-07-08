@@ -5,12 +5,16 @@ import selectIcon from "../assets/icons/arrow-bottom.svg";
 import { Button } from "./Button";
 import { ClaimsTitle } from "./claims/ClaimsTitle";
 import { FormProvider, useForm } from "react-hook-form";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useTypedDispatch, useTypedSelector } from "../store";
 import { newClaim } from "../store/action-creators/new-claim";
 import { useCallback, useEffect, useState } from "react";
 import { CLAIM_TYPES, NEW_CLAIM_TEXT_PATTERN } from "../helpers/contstants";
-import { NEW_CLAIM_SUCCESS, UPDATE_STATUS, UPDATE_TYPE } from "../store/types/actionTypes";
+import {
+  NEW_CLAIM_SUCCESS,
+  UPDATE_STATUS,
+  UPDATE_TYPE,
+} from "../store/types/actionTypes";
 import { checkSelectError } from "../helpers/checkSelectError";
 import { convertClaimTypes, getClaimTypes } from "../helpers/getClaimTypes";
 import { editClaim } from "../store/action-creators/edit-claim";
@@ -19,16 +23,17 @@ export const CreateEditClaim = () => {
   const { title, description, type, status, id } = useTypedSelector(
     (state) => state.setClaimValues
   );
-  const { isAdmin } = useTypedSelector(state => state.user)
+  const { isAdmin } = useTypedSelector((state) => state.user);
   const { success, error } = useTypedSelector((state) => state.newClaim);
   const [selectedValue, setSelectedValue] = useState(
     type ? convertClaimTypes(type) : ""
   );
   const [isSelectError, setIsSelectError] = useState(false);
-  const isIncomingPage = useLocation().pathname === "/home/incoming-claim";
   const methods = useForm();
   const navigate = useNavigate();
   const dispatch = useTypedDispatch();
+  const {claimId} = useParams()
+  const isIncomingPage = useLocation().pathname === `/home/incoming-claim/${claimId}`;
 
   const getSelectValue = (val: string) => {
     setSelectedValue(val);
@@ -37,8 +42,7 @@ export const CreateEditClaim = () => {
 
   const onSubmit = (data: any) => {
     if (checkSelectError(selectedValue)) {
-      !isIncomingPage
-        && dispatch(newClaim(data, selectedValue))
+      !isIncomingPage && dispatch(newClaim(data, selectedValue));
       setIsSelectError(false);
       methods.reset();
     } else {

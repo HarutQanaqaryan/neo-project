@@ -3,11 +3,10 @@ type SetIncomingClaimValueTypes = {
   claims: any;
   dispatch: any;
   action: string;
-  navigate: any;
 };
 
 export const setIncomingClaimValues = (param: SetIncomingClaimValueTypes) => {
-  const { e, claims, dispatch, action, navigate } = param;
+  const { e, claims, dispatch, action } = param;
 
   const parentElemId = e.currentTarget.parentElement?.id;
   const claimIds = claims.map((el: any) => el._id);
@@ -25,5 +24,4 @@ export const setIncomingClaimValues = (param: SetIncomingClaimValueTypes) => {
         });
       }
     });
-  navigate("../home/incoming-claim");
 };
