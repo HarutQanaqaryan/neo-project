@@ -1,20 +1,43 @@
+import { useEffect, useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
-import { NavLink } from "react-router-dom";
-import { EMAIL_PATTERN, PASS_PATTERN, USER_NAME_PATTERN } from "../../helpers/contstants";
+import { useNavigate } from "react-router-dom";
+import {
+  EMAIL_PATTERN,
+  PASS_PATTERN,
+  USER_NAME_PATTERN,
+} from "../../helpers/contstants";
 import { useTypedDispatch, useTypedSelector } from "../../store";
+import { loginUser } from "../../store/action-creators/login";
 import { registerUser } from "../../store/action-creators/register";
 import { Button } from "../Button";
 import { TextField } from "../TextField";
 
 export const RegisterForm = () => {
   const { success, error } = useTypedSelector((state) => state.register);
+  const [newUser, setNewUser] = useState({
+    login: "",
+    password: ""
+  })
+
   const dispatch = useTypedDispatch();
   const methods = useForm();
+  const navigate = useNavigate();
 
   const onSubmit = (data: any) => {
-    dispatch(registerUser(data));
-    methods.reset();
+   dispatch(registerUser(data));
+  setNewUser({
+    login: data.email,
+    password: data.password
+  })
   };
+
+  useEffect(() => {
+    success && dispatch(loginUser(newUser));
+    setTimeout(() => {
+      success && navigate("../home", { replace: true });
+    }, 1000)
+    success && methods.reset();
+  }, [dispatch, methods, navigate, success, newUser])
 
   return (
     <FormProvider {...methods}>
@@ -74,18 +97,15 @@ export const RegisterForm = () => {
         />
         {success && (
           <span className="user-registered">
-            Are you registered{" "}
-            <NavLink to="/" className="user-registered_link">
-              Login
-            </NavLink>
+            You have successfully registered
           </span>
         )}
-        {error && <span className="text-field-error_message">This user already exists</span>}
-        <Button
-          text="Register"
-          className="login-user_btn"
-          onClick={() => console.log("a")}
-        />
+        {error && (
+          <span className="text-field-error_message">
+            {error}
+          </span>
+        )}
+        <Button text="Register" className="login-user_btn" />
       </form>
     </FormProvider>
   );

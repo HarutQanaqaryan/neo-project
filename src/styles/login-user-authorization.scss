@@ -15,6 +15,7 @@
   align-items: center;
   flex-direction: column;
   padding: 70px 130px 110px 130px;
+  position: relative;
   @media screen and (max-width: 800px) {
     width: 100vw;
     padding: 0%;
@@ -59,13 +60,22 @@
 .user-registered {
   font-family: $baseFont;
   font-size: 18px;
-  color: green;
+  color: #fff;
   text-align: center;
   margin-bottom: 20px;
-}
-.user-registered_link {
-  text-decoration: none;
-  color: blue;
-  color: rgb(1, 85, 1);
-  border-bottom: 1px solid rgb(1, 85, 1);
+  position: absolute;
+  top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+  width: fit-content;
+  height: fit-content;
+  z-index: 10;
+  background: #7db59a;
+  padding: 10px;
+  border-radius: $baseBorderRadius;
+  @media screen and (max-width: 800px) {
+    font-size: 12px;
+  }
 }

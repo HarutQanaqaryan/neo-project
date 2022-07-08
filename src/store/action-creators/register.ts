@@ -13,12 +13,11 @@ export const registerUser = (data: RegisterData): TypedThunk => {
         password: data.password,
       });
       dispatch({ type: REGISTER_SUCCESS, payload: true });
-    } catch (e) {
+    } catch (e: any) {
       dispatch({
         type: REGISTER_ERROR,
-        payload: true
+        payload: e.response.data.message
       });
-      console.log(e)
     }
   };
 };

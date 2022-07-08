@@ -35,10 +35,10 @@ export const loginUser = (data: SignInData): TypedThunk => {
       const notRegistered =
         e.response.status === 401 &&
         "User not registered or incorrectly entered email/password";
-      const serverError = e.response.status === 0 && "Server side error";
+      const serverError = e.response.status === 404 && "Page not found";
       dispatch({
         type: LOGIN_ERROR,
-        payload: notRegistered || serverError,
+        payload: notRegistered || serverError
       });
     }
   };

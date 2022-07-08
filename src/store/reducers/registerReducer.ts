@@ -6,7 +6,7 @@ import { AuthAction, RegisterState } from "../types/loginRegister";
   
   const initialState: RegisterState = {
     success: false,
-    error: false
+    error: ""
   };
   
   export const registerReducer = (state = initialState, action: AuthAction) => {

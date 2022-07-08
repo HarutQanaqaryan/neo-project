@@ -35,6 +35,7 @@ export const TextField = (prop: TextFieldProps) => {
             disabled: prop.disabled
           })}
           onChange={prop.onChange}
+          autoComplete="on"
         />
         {prop.icon && (
           <img src={prop.icon} alt="icon" className="text-field-icon" />

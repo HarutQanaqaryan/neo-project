@@ -41,7 +41,7 @@ interface SignOutAction {
   
   export interface RegisterState {
     success: boolean;
-    error: boolean;
+    error: string;
   }
   
   export type AuthAction =

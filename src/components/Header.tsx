@@ -6,7 +6,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useTypedDispatch } from "../store";
 import { SearchTextField } from "./SearchTexField";
 import { SEARCH_VALUE } from "../store/reducers/filterValues";
-import { LOG_OUT } from "../store/types/actionTypes";
+import { LOG_OUT, REGISTER_SUCCESS } from "../store/types/actionTypes";
 import React from "react";
 
 interface HeaderProps {
@@ -24,6 +24,7 @@ export const Header = (prop: HeaderProps) => {
 
   const logOut = () => {
     dispatch({ type: LOG_OUT });
+    dispatch({ type: REGISTER_SUCCESS, payload: false });
     localStorage.removeItem("Token");
     localStorage.removeItem("User");
     navigate("../");
