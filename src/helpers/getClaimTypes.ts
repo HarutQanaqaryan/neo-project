@@ -13,7 +13,7 @@ export const getClaimTypes = (type: string) => {
       return "net";
     }
     default: {
-      return "soft";
+      return "";
     }
   }
 };

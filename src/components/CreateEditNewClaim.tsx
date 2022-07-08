@@ -38,13 +38,13 @@ export const CreateEditClaim = () => {
   const onSubmit = (data: any) => {
     if (checkSelectError(selectedValue)) {
       !isIncomingPage
-        ? dispatch(newClaim(data, selectedValue))
-        : dispatch(editClaim(data, selectedValue, id, status));
+        && dispatch(newClaim(data, selectedValue))
       setIsSelectError(false);
       methods.reset();
     } else {
       !isIncomingPage && setIsSelectError(true);
     }
+    isIncomingPage && dispatch(editClaim(data, selectedValue, id, status));
   };
 
   const checkSucces = useCallback(() => {
